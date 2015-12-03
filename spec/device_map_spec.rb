@@ -89,4 +89,18 @@ describe CFA::Grub2::DeviceMap do
       expect(config.grub_devices).to eq(["hd1", "hd0"])
     end
   end
+
+  describe "#save" do
+    it "raise exception if more then 8 grub devices is used" do
+      config.add_mapping("hd2", "/dev/sdc")
+      config.add_mapping("hd3", "/dev/sdc")
+      config.add_mapping("hd4", "/dev/sdc")
+      config.add_mapping("hd5", "/dev/sdc")
+      config.add_mapping("hd6", "/dev/sdc")
+      config.add_mapping("hd7", "/dev/sdc")
+      config.add_mapping("hd8", "/dev/sdc")
+
+      expect{config.save}.to raise_error(/limit/i)
+    end
+  end
 end

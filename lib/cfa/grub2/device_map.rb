@@ -12,6 +12,9 @@ module CFA
     # - Do not overwrite files
     # - When setting value first try to just change value if key already exists
     # - When grub key is not there, then add to file
+    # - checks and raise exception if number of mappings exceed limit 8.
+    #   Limitation is caused by BIOS Int 13 used by grub2 for selecting boot
+    #   device.
     class DeviceMap < BaseModel
       PARSER = AugeasParser.new("device_map.lns")
       PATH = "/etc/grub2/device.map"
@@ -20,6 +23,12 @@ module CFA
         super(PARSER, PATH, file_handler: file_handler)
         # TODO: add to parser method to fill empty data tree
         self.data = AugeasTree.new
+      end
+
+      def save(changes_only: false)
+        raise "Too much grub devices. Limit is 8." if grub_devices.size > 8
+
+        super
       end
 
       # @return [String] grub device name for given system device
