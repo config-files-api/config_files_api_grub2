@@ -17,7 +17,8 @@ module CFA
         activate = data.delete("activate")
         generic_mbr = data.delete("generic_mbr")
 
-        res = data.map { |disk| disk + "\n" }
+        res = data.join("\n")
+        res << "\n" unless res.empty?
 
         res << "activate\n" if activate
         res << "generic_mbr\n" if generic_mbr
