@@ -100,7 +100,7 @@ describe CFA::Grub2::DeviceMap do
       config.add_mapping("hd7", "/dev/sdc")
       config.add_mapping("hd8", "/dev/sdc")
 
-      expect{config.save}.to raise_error(/limit/i)
+      expect { config.save }.to raise_error(/limit/i)
     end
   end
 end

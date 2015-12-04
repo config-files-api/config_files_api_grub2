@@ -46,7 +46,8 @@ module CFA
       end
 
       # Appends to configuration mapping between grub_device and system_device
-      # @note if mapping for given grub device is already defined, it will be overwritten
+      # @note if mapping for given grub device is already defined, it will be
+      #   overwritten
       def add_mapping(grub_device, system_device)
         generic_set(grub_device, system_device)
       end
@@ -56,8 +57,8 @@ module CFA
         data.delete(grub_device)
       end
 
-      # @return [Array<String>] list of all grub devices which have mapping. If there is no
-      #   mapping, then it return empty list.
+      # @return [Array<String>] list of all grub devices which have mapping.
+      #   If there is no mapping, then it return empty list.
       def grub_devices
         # TODO: maybe add matcher which allow regexp for key or negative regexp
         entries = data.data.select do |entry|

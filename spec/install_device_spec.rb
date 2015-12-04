@@ -99,5 +99,3 @@ describe CFA::Grub2::InstallDevice do
     end
   end
 end
-
-

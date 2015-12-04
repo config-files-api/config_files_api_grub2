@@ -17,9 +17,7 @@ module CFA
         activate = data.delete("activate")
         generic_mbr = data.delete("generic_mbr")
 
-        res = data.each_with_object("") do |disk, res|
-          res << disk << "\n"
-        end
+        res = data.map { |disk| disk + "\n" }
 
         res << "activate\n" if activate
         res << "generic_mbr\n" if generic_mbr
