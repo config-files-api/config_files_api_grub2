@@ -25,6 +25,10 @@ module CFA
 
         res
       end
+
+      def self.empty
+        []
+      end
     end
 
     # Model representing configuration in file /etc/default/grub_installdevice
@@ -33,8 +37,6 @@ module CFA
 
       def initialize(file_handler: File)
         super(InstallDeviceParser, PATH, file_handler: file_handler)
-        # TODO: add to parser method to fill empty data tree
-        self.data = []
       end
 
       # Adds new install device. Does nothing if it is already there.

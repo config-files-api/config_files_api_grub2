@@ -20,12 +20,14 @@ module CFA
           raise NotImplementedError,
             "Serializing not implemented, use grub2 generator"
         end
+
+        def self.empty
+          []
+        end
       end
 
       def initialize(file_handler: File)
         super(Parser, PATH, file_handler: file_handler)
-        # TODO: add to parser method to fill empty data tree
-        self.data = []
       end
 
       # @return [Array<String>] sections from grub.cfg in order as they appear
