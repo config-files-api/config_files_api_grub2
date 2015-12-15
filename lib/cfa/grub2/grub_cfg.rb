@@ -16,7 +16,7 @@ module CFA
           menu_lines.map { |line| line[/\s*menuentry\s*'([^']+)'.*/, 1] }
         end
 
-        def self.serialize(string)
+        def self.serialize(_string)
           raise NotImplementedError,
             "Serializing not implemented, use grub2 generator"
         end
