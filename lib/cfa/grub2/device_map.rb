@@ -57,7 +57,7 @@ module CFA
       # @return [Array<String>] list of all grub devices which have mapping.
       #   If there is no mapping, then it return empty list.
       def grub_devices
-        matcher = Matcher.new { |k, v| k !~ /comment/ }
+        matcher = Matcher.new { |k, _v| k !~ /comment/ }
         entries = data.select(matcher)
 
         entries.map { |e| e[:key] }
