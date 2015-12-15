@@ -21,8 +21,6 @@ module CFA
 
       def initialize(file_handler: File)
         super(PARSER, PATH, file_handler: file_handler)
-        # TODO: add to parser method to fill empty data tree
-        self.data = AugeasTree.new
       end
 
       def save(changes_only: false)
@@ -33,7 +31,6 @@ module CFA
 
       # @return [String] grub device name for given system device
       def grub_device_for(system_dev)
-        # TODO: maybe move to generic tree find key for value?
         matcher = Matcher.new(value_matcher: system_dev)
         entry = data.select(matcher)
 
@@ -60,10 +57,8 @@ module CFA
       # @return [Array<String>] list of all grub devices which have mapping.
       #   If there is no mapping, then it return empty list.
       def grub_devices
-        # TODO: maybe add matcher which allow regexp for key or negative regexp
-        entries = data.data.select do |entry|
-          entry[:key] !~ /comment/
-        end
+        matcher = Matcher.new { |k, _v| k !~ /comment/ }
+        entries = data.select(matcher)
 
         entries.map { |e| e[:key] }
       end

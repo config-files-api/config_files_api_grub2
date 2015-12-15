@@ -27,7 +27,6 @@ module CFA
 
       def initialize(file_handler: File)
         super(PARSER, PATH, file_handler: file_handler)
-        self.data = AugeasTree.new
       end
 
       def save(changes_only: false)
