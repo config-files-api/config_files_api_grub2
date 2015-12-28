@@ -25,7 +25,7 @@ module CFA
       PARSER = AugeasParser.new("sysconfig.lns")
       PATH = "/etc/default/grub"
 
-      def initialize(file_handler: File)
+      def initialize(file_handler: nil)
         super(PARSER, PATH, file_handler: file_handler)
       end
 

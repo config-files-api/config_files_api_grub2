@@ -19,7 +19,7 @@ module CFA
       PARSER = AugeasParser.new("device_map.lns")
       PATH = "/etc/grub2/device.map"
 
-      def initialize(file_handler: File)
+      def initialize(file_handler: nil)
         super(PARSER, PATH, file_handler: file_handler)
       end
 

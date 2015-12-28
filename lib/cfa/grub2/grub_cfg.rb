@@ -26,7 +26,7 @@ module CFA
         end
       end
 
-      def initialize(file_handler: File)
+      def initialize(file_handler: nil)
         super(Parser, PATH, file_handler: file_handler)
       end
 

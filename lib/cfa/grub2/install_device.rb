@@ -35,7 +35,7 @@ module CFA
     class InstallDevice < BaseModel
       PATH = "/etc/default/grub_installdevice"
 
-      def initialize(file_handler: File)
+      def initialize(file_handler: nil)
         super(InstallDeviceParser, PATH, file_handler: file_handler)
       end
 
