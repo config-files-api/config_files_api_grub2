@@ -1,4 +1,10 @@
 -------------------------------------------------------------------
+Mon Dec 28 08:47:57 UTC 2015 - jreidinger@suse.com
+
+- use new default file handler from base
+- 0.2.0
+
+-------------------------------------------------------------------
 Wed Dec 16 09:29:54 UTC 2015 - jreidinger@suse.com
 
 - initial package. Supports models for files:
