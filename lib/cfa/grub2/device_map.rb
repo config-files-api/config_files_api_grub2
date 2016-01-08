@@ -18,6 +18,7 @@ module CFA
     #   device.
     class DeviceMap < BaseModel
       PARSER = AugeasParser.new("device_map.lns")
+      # FIXME: BaseModel raises Errno::ENOENT if the file does not exist
       PATH = "/etc/grub2/device.map"
 
       def initialize(file_handler: nil)
