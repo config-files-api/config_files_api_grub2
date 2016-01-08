@@ -46,7 +46,7 @@ describe CFA::Grub2::Default do
     let(:file_content) { "GRUB_ENABLE_CRYPTODISK=false\n" }
 
     it "returns object representing boolean state" do
-      expect(config.os_prober).to be_a(boolean_value_class)
+      expect(config.cryptodisk).to be_a(boolean_value_class)
       # few simple test to verify params
       expect(config.cryptodisk.enabled?).to eq(false)
 
