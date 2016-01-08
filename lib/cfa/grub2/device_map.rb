@@ -7,12 +7,13 @@ module CFA
   module Grub2
     # Represents grub device map in /etc/grub2/device_map
     # for details see https://www.gnu.org/software/grub/manual/html_node/Device-map.html
+    #
     # Main features:
     #
     # - Do not overwrite files
     # - When setting value first try to just change value if key already exists
     # - When grub key is not there, then add to file
-    # - checks and raise exception if number of mappings exceed limit 8.
+    # - checks and raises an exception if number of mappings exceed limit 8.
     #   Limitation is caused by BIOS Int 13 used by grub2 for selecting boot
     #   device.
     class DeviceMap < BaseModel
@@ -24,12 +25,13 @@ module CFA
       end
 
       def save(changes_only: false)
-        raise "Too much grub devices. Limit is 8." if grub_devices.size > 8
+        # TODO: a separate BaseModel#validate method?
+        raise "Too many grub devices. Limit is 8." if grub_devices.size > 8
 
         super
       end
 
-      # @return [String] grub device name for given system device
+      # @return [String, nil] grub device name for given system device
       def grub_device_for(system_dev)
         matcher = Matcher.new(value_matcher: system_dev)
         entry = data.select(matcher)
@@ -37,7 +39,7 @@ module CFA
         entry.empty? ? nil : entry.first[:key]
       end
 
-      # @return [String] system device name for given grub device
+      # @return [String, nil] system device name for given grub device
       def system_device_for(grub_device)
         data[grub_device]
       end

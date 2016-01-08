@@ -3,9 +3,13 @@ require "cfa/base_model"
 module CFA
   module Grub2
     # Represents generated grub configuration at /boot/grub2/grub.cfg
+    #
+    # Upstream docs:
+    # http://www.gnu.org/software/grub/manual/html_node/Configuration.html
+    #
     # Main features:
     #
-    # - List of generated sections including translations
+    # - List of generated sections
     class GrubCfg < BaseModel
       PATH = "/boot/grub2/grub.cfg"
 
@@ -16,9 +20,9 @@ module CFA
           menu_lines.map { |line| line[/\s*menuentry\s*'([^']+)'.*/, 1] }
         end
 
-        def self.serialize(_string)
+        def self.serialize(_model)
           raise NotImplementedError,
-            "Serializing not implemented, use grub2 generator"
+            "Serializing not implemented, use grub-mkconfig or Bootloader::Grub2"
         end
 
         def self.empty

@@ -2,13 +2,15 @@ $LOAD_PATH << File.expand_path("../../lib", __FILE__)
 
 require "cfa/grub2/default"
 require "cfa/memory_file"
+require "pp"
 
 grub_path = File.expand_path("../data/grub.cfg", __FILE__)
 memory_file = CFA::MemoryFile.new(File.read(grub_path))
 config = CFA::Grub2::Default.new(file_handler: memory_file)
 config.load
 
-puts "config: " + config.inspect
+puts "config:"
+pp config
 puts ""
 puts "os prober:  #{config.os_prober.enabled?}"
 
