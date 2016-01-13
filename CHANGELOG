@@ -1,4 +1,10 @@
 -------------------------------------------------------------------
+Wed Jan 13 13:13:25 UTC 2016 - jreidinger@suse.com
+
+- add attribute GRUB_HIDDEN_TIMEOUT to /etc/default/grub model
+- 0.3.0
+
+-------------------------------------------------------------------
 Mon Dec 28 08:47:57 UTC 2015 - jreidinger@suse.com
 
 - use new default file handler from base
