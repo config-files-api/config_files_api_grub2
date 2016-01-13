@@ -27,6 +27,22 @@ describe CFA::Grub2::Default do
     end
   end
 
+  describe "#hiddentimeout" do
+    context "key is specified" do
+      let(:file_content) { "GRUB_HIDDEN_TIMEOUT=10\n" }
+      it "returns value of GRUB_HIDDEN_TIMEOUT key" do
+        expect(config.hidden_timeout).to eq "10"
+      end
+    end
+
+    context "key is missing in file" do
+      let(:file_content) { "\n" }
+      it "returns nil" do
+        expect(config.hidden_timeout).to eq nil
+      end
+    end
+  end
+
   describe "#os_prober" do
     let(:file_content) { "GRUB_DISABLE_OS_PROBER=true\n" }
 
