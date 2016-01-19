@@ -1,4 +1,10 @@
 -------------------------------------------------------------------
+Tue Jan 19 08:54:02 UTC 2016 - jreidinger@suse.com
+
+- fix dependency on cfa
+- 0.3.1
+
+-------------------------------------------------------------------
 Wed Jan 13 13:13:25 UTC 2016 - jreidinger@suse.com
 
 - add attribute GRUB_HIDDEN_TIMEOUT to /etc/default/grub model
