@@ -5,6 +5,7 @@ Gem::Specification.new do |s|
   s.authors     = ["Josef Reidinger"]
   s.email       = ["jreidinger@suse.cz"]
   s.homepage    = "http://github.com/config-files-api/config_files_api_grub2"
+  s.license     = "LGPL-3.0"
   s.summary     = "Models for GRUB2 configuration files."
   s.description = "Models allowing easy read and modification of GRUB2" \
     " configuration files. It is a plugin for cfa framework."
