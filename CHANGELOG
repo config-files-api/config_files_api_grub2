@@ -1,4 +1,10 @@
 -------------------------------------------------------------------
+Thu Mar 24 09:30:35 UTC 2016 - jreidinger@suse.com
+
+- do not modify data during grub_installdevice write (FATE#317701)
+- 0.3.2
+
+-------------------------------------------------------------------
 Tue Jan 19 08:54:02 UTC 2016 - jreidinger@suse.com
 
 - fix dependency on cfa

@@ -15,12 +15,14 @@ describe CFA::Grub2::GrubCfg do
 
   describe "#sections" do
     it "gets menu entry in list" do
-      expect(config.sections).to eq([
-        "openSUSE Leap 42.1",
-        "openSUSE Leap 42.1, with Linux 4.1.12-1-default",
-        "openSUSE Leap 42.1, with Linux 4.1.12-1-default (recovery mode)",
-        "halt"
-      ])
+      expect(config.sections).to eq(
+        [
+          "openSUSE Leap 42.1",
+          "openSUSE Leap 42.1, with Linux 4.1.12-1-default",
+          "openSUSE Leap 42.1, with Linux 4.1.12-1-default (recovery mode)",
+          "halt"
+        ]
+      )
     end
   end
 end

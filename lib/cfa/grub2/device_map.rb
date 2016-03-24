@@ -17,7 +17,7 @@ module CFA
     #   device.
     class DeviceMap < BaseModel
       PARSER = AugeasParser.new("device_map.lns")
-      PATH = "/etc/grub2/device.map"
+      PATH = "/etc/grub2/device.map".freeze
 
       def initialize(file_handler: nil)
         super(PARSER, PATH, file_handler: file_handler)

@@ -7,7 +7,7 @@ module CFA
     #
     # - List of generated sections including translations
     class GrubCfg < BaseModel
-      PATH = "/boot/grub2/grub.cfg"
+      PATH = "/boot/grub2/grub.cfg".freeze
 
       # @private only internal parser
       class Parser
