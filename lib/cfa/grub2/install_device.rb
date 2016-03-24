@@ -14,6 +14,9 @@ module CFA
 
       # gets list of devices and create file content from it
       def self.serialize(data)
+        # do not modify original data as serialize is not end of world
+        data = data.dup
+
         activate = data.delete("activate")
         generic_mbr = data.delete("generic_mbr")
 
