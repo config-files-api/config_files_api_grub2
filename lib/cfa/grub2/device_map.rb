@@ -5,7 +5,7 @@ require "cfa/matcher"
 
 module CFA
   module Grub2
-    # Represents grub device map in /etc/grub2/device_map
+    # Represents grub device map in /boot/grub2/device_map
     # for details see https://www.gnu.org/software/grub/manual/html_node/Device-map.html
     # Main features:
     #
@@ -17,7 +17,7 @@ module CFA
     #   device.
     class DeviceMap < BaseModel
       PARSER = AugeasParser.new("device_map.lns")
-      PATH = "/etc/grub2/device.map".freeze
+      PATH = "/boot/grub2/device.map".freeze
 
       def initialize(file_handler: nil)
         super(PARSER, PATH, file_handler: file_handler)
