@@ -44,10 +44,12 @@ describe CFA::Grub2::InstallDevice do
 
   describe "#devices" do
     it "returns list of devices from configuration" do
-      expect(config.devices.sort).to eq([
-        "/dev/disk/by-id/ata-TOSHIBA_MG03ACA100_15U5K43SF",
-        "/dev/sdb"
-      ])
+      expect(config.devices.sort).to eq(
+        [
+          "/dev/disk/by-id/ata-TOSHIBA_MG03ACA100_15U5K43SF",
+          "/dev/sdb"
+        ]
+      )
     end
   end
 

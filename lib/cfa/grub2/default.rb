@@ -24,7 +24,7 @@ module CFA
       )
 
       PARSER = AugeasParser.new("sysconfig.lns")
-      PATH = "/etc/default/grub"
+      PATH = "/etc/default/grub".freeze
 
       def initialize(file_handler: nil)
         super(PARSER, PATH, file_handler: file_handler)
@@ -109,7 +109,7 @@ module CFA
         end
       end
 
-      VALID_TERMINAL_OPTIONS = [:serial, :console, :gfxterm]
+      VALID_TERMINAL_OPTIONS = [:serial, :console, :gfxterm].freeze
       def terminal=(value)
         if !VALID_TERMINAL_OPTIONS.include?(value)
           raise ArgumentError, "invalid value #{value.inspect}"
@@ -168,8 +168,8 @@ module CFA
         #
         def parameter(key)
           values = @tree.data
-            .select { |e| e[:key] == key }
-            .map { |e| e[:value] }
+                        .select { |e| e[:key] == key }
+                        .map { |e| e[:value] }
 
           return false if values.empty?
           return values if values.size > 1
@@ -202,8 +202,8 @@ module CFA
           def initialize(line)
             line ||= ""
             pairs = line.split(/\s/)
-              .reject(&:empty?)
-              .map { |e| e.split("=", 2) }
+                        .reject(&:empty?)
+                        .map { |e| e.split("=", 2) }
 
             @data = pairs.map do |k, v|
               {
