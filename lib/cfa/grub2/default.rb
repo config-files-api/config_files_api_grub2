@@ -16,11 +16,12 @@ module CFA
     #   to the end of file
     class Default < BaseModel
       attributes(
-        timeout:        "GRUB_TIMEOUT",
-        hidden_timeout: "GRUB_HIDDEN_TIMEOUT",
+        default:        "GRUB_DEFAULT",
         distributor:    "GRUB_DISTRIBUTOR",
         gfxmode:        "GRUB_GFXMODE",
-        theme:          "GRUB_THEME"
+        hidden_timeout: "GRUB_HIDDEN_TIMEOUT",
+        theme:          "GRUB_THEME",
+        timeout:        "GRUB_TIMEOUT"
       )
 
       PARSER = AugeasParser.new("sysconfig.lns")

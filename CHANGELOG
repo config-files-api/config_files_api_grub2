@@ -1,4 +1,11 @@
 -------------------------------------------------------------------
+Wed Mar 30 12:37:22 UTC 2016 - jreidinger@suse.com
+
+- add attribute GRUB_DEFAULT to /etc/default/grub model
+  (FATE#317701)
+- 0.4.0
+
+-------------------------------------------------------------------
 Thu Mar 24 12:43:34 UTC 2016 - jreidinger@suse.com
 
 - fix path to device.map in its model
