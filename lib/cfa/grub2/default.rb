@@ -96,7 +96,8 @@ module CFA
       end
 
       def cryptodisk
-        @cryptodisk ||= BooleanValue.new("GRUB_ENABLE_CRYPTODISK", self)
+        @cryptodisk ||= BooleanValue.new("GRUB_ENABLE_CRYPTODISK", self,
+          true_value: "y", false_value: "n")
       end
 
       def terminal
