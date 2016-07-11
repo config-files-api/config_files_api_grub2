@@ -12,24 +12,14 @@ module CFA
       # @private only internal parser
       class Parser
         def self.parse(string)
-          result = []
           submenu = ""
-          string.lines.each do |line|
+          string.lines.each_with_object([]) do |line, result|
             case line
-            when /menuentry\s*'/
-              entry = line[/\s*menuentry\s+'([^']+)'.*/, 1]
-              result << {
-                title: entry,
-                path: submenu.empty? ? entry : "#{submenu}>#{entry}"
-              }
-            when /^}\s*\n/
-              submenu = ""
-            when /submenu\s/
-              submenu = line[/\s*submenu\s+'([^']+)'.*/, 1]
+            when /menuentry\s*'/ then result << parse_entry(line, submenu)
+            when /^}\s*\n/ then submenu = ""
+            when /submenu\s/ then submenu = line[/\s*submenu\s+'([^']+)'.*/, 1]
             end
           end
-
-          result
         end
 
         def self.serialize(_string)
@@ -40,6 +30,15 @@ module CFA
         def self.empty
           []
         end
+
+        def self.parse_entry(line, submenu)
+          entry = line[/\s*menuentry\s+'([^']+)'.*/, 1]
+          {
+            title: entry,
+            path:  submenu.empty? ? entry : "#{submenu}>#{entry}"
+          }
+        end
+        private_class_method :parse_entry
       end
 
       def initialize(file_handler: nil)

@@ -32,19 +32,22 @@ describe CFA::Grub2::GrubCfg do
         [
           {
             title: "openSUSE Leap 42.1",
-            path: "openSUSE Leap 42.1"
+            path:  "openSUSE Leap 42.1"
           },
           {
             title: "openSUSE Leap 42.1, with Linux 4.1.12-1-default",
-            path: "Advanced options for openSUSE Leap 42.1>openSUSE Leap 42.1, with Linux 4.1.12-1-default"
+            path:  "Advanced options for openSUSE Leap 42.1>" \
+              "openSUSE Leap 42.1, with Linux 4.1.12-1-default"
           },
           {
-            title: "openSUSE Leap 42.1, with Linux 4.1.12-1-default (recovery mode)",
-            path: "Advanced options for openSUSE Leap 42.1>openSUSE Leap 42.1, with Linux 4.1.12-1-default (recovery mode)"
+            title: "openSUSE Leap 42.1, with Linux 4.1.12-1-default " \
+              "(recovery mode)",
+            path:  "Advanced options for openSUSE Leap 42.1>" \
+              "openSUSE Leap 42.1, with Linux 4.1.12-1-default (recovery mode)"
           },
           {
             title: "halt",
-            path: "halt"
+            path:  "halt"
           }
         ]
       )
