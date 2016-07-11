@@ -170,8 +170,8 @@ module CFA
         #
         def parameter(key)
           values = @tree.data
-            .select { |e| e[:key] == key }
-            .map { |e| e[:value] }
+                        .select { |e| e[:key] == key }
+                        .map { |e| e[:value] }
 
           return false if values.empty?
           return values if values.size > 1
@@ -204,8 +204,8 @@ module CFA
           def initialize(line)
             line ||= ""
             pairs = line.split(/\s/)
-              .reject(&:empty?)
-              .map { |e| e.split("=", 2) }
+                        .reject(&:empty?)
+                        .map { |e| e.split("=", 2) }
 
             @data = pairs.map do |k, v|
               {

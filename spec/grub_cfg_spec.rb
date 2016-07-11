@@ -56,7 +56,7 @@ describe CFA::Grub2::GrubCfg do
 
   describe "#serialize" do
     it "raises NotImplementedError" do
-      expect {config.serialize("dummy")}.to raise_error(NotImplementedError)
+      expect { config.serialize("dummy") }.to raise_error(NotImplementedError)
     end
   end
 end
