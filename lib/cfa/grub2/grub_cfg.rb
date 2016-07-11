@@ -12,8 +12,14 @@ module CFA
       # @private only internal parser
       class Parser
         def self.parse(string)
-          menu_lines = string.lines.grep(/menuentry\s*'/)
-          menu_lines.map { |line| line[/\s*menuentry\s*'([^']+)'.*/, 1] }
+          submenu = ""
+          string.lines.each_with_object([]) do |line, result|
+            case line
+            when /menuentry\s*'/ then result << parse_entry(line, submenu)
+            when /^}\s*\n/ then submenu = ""
+            when /submenu\s/ then submenu = line[/\s*submenu\s+'([^']+)'.*/, 1]
+            end
+          end
         end
 
         def self.serialize(_string)
@@ -24,6 +30,15 @@ module CFA
         def self.empty
           []
         end
+
+        def self.parse_entry(line, submenu)
+          entry = line[/\s*menuentry\s+'([^']+)'.*/, 1]
+          {
+            title: entry,
+            path:  submenu.empty? ? entry : "#{submenu}>#{entry}"
+          }
+        end
+        private_class_method :parse_entry
       end
 
       def initialize(file_handler: nil)
@@ -31,7 +46,15 @@ module CFA
       end
 
       # @return [Array<String>] sections from grub.cfg in order as they appear
+      # @deprecated use instead boot_entries
       def sections
+        data.map { |p| p[:title] }
+      end
+
+      # @return [Array<Hash>] return boot entries containing `title:` as shown
+      # on screen and `path:` whole path usable for grub2-set-default including
+      # also submenu part of path
+      def boot_entries
         data
       end
     end

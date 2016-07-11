@@ -25,4 +25,38 @@ describe CFA::Grub2::GrubCfg do
       )
     end
   end
+
+  describe "#boot_entries" do
+    it "gets boot entries list with title: and path: elements" do
+      expect(config.boot_entries).to eq(
+        [
+          {
+            title: "openSUSE Leap 42.1",
+            path:  "openSUSE Leap 42.1"
+          },
+          {
+            title: "openSUSE Leap 42.1, with Linux 4.1.12-1-default",
+            path:  "Advanced options for openSUSE Leap 42.1>" \
+              "openSUSE Leap 42.1, with Linux 4.1.12-1-default"
+          },
+          {
+            title: "openSUSE Leap 42.1, with Linux 4.1.12-1-default " \
+              "(recovery mode)",
+            path:  "Advanced options for openSUSE Leap 42.1>" \
+              "openSUSE Leap 42.1, with Linux 4.1.12-1-default (recovery mode)"
+          },
+          {
+            title: "halt",
+            path:  "halt"
+          }
+        ]
+      )
+    end
+  end
+
+  describe "#save" do
+    it "raises NotImplementedError" do
+      expect { config.save }.to raise_error(NotImplementedError)
+    end
+  end
 end
