@@ -1,4 +1,11 @@
 -------------------------------------------------------------------
+Wed Jul 13 07:40:52 UTC 2016 - jreidinger@suse.com
+
+- Do not crash for submenu with double quotes (bnc#986005)
+- filter out snapper menuentry ( using double quotes )
+- 0.5.1
+
+-------------------------------------------------------------------
 Mon Jul 11 13:40:06 UTC 2016 - jreidinger@suse.com
 
 - extend grub.cfg model to construct also full path usable for

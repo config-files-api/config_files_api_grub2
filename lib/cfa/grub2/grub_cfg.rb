@@ -15,9 +15,9 @@ module CFA
           submenu = ""
           string.lines.each_with_object([]) do |line, result|
             case line
-            when /menuentry\s*'/ then result << parse_entry(line, submenu)
+            when /menuentry\s+'/ then result << parse_entry(line, submenu)
             when /^}\s*\n/ then submenu = ""
-            when /submenu\s/ then submenu = line[/\s*submenu\s+'([^']+)'.*/, 1]
+            when /submenu\s+'/ then submenu = line[/\s*submenu\s+'([^']+)'.*/, 1]
             end
           end
         end
