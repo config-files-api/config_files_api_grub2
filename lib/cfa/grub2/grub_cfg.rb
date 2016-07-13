@@ -55,6 +55,10 @@ module CFA
       # @return [Array<Hash>] return boot entries containing `title:` as shown
       # on screen and `path:` whole path usable for grub2-set-default including
       # also submenu part of path
+      # @note Some entries are not in fact bootable, such as the
+      # "run snaper rollback" hint-only entry on SUSE. They are ignored.
+      # As a hack, they are recognized by double quote delimiters while the
+      # regular entries use single quotes.
       def boot_entries
         data
       end

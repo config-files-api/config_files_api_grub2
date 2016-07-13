@@ -59,7 +59,7 @@ describe CFA::Grub2::GrubCfg do
         CFA::MemoryFile.new(File.read(path))
       end
 
-      it "filter out snapper entry" do
+      it "filters out unbootable entries" do
         expect(config.boot_entries).to eq(
           [
             {
