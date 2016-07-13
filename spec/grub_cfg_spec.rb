@@ -52,6 +52,35 @@ describe CFA::Grub2::GrubCfg do
         ]
       )
     end
+
+    context "grub.cfg with snapper boot entry" do
+      let(:memory_file) do
+        path = File.expand_path("../fixtures/grub-with-snapper.cfg", __FILE__)
+        CFA::MemoryFile.new(File.read(path))
+      end
+
+      it "filters out unbootable entries" do
+        expect(config.boot_entries).to eq(
+          [
+            {
+              title: "SLES 12-SP2",
+              path:  "SLES 12-SP2"
+            },
+            {
+              title: "SLES 12-SP2, with Linux 4.4.13-46-default",
+              path:  "Advanced options for SLES 12-SP2>" \
+                     "SLES 12-SP2, with Linux 4.4.13-46-default"
+            },
+            {
+              title: "SLES 12-SP2, with Linux 4.4.13-46-default " \
+                     "(recovery mode)",
+              path:  "Advanced options for SLES 12-SP2>" \
+                     "SLES 12-SP2, with Linux 4.4.13-46-default (recovery mode)"
+            }
+          ]
+        )
+      end
+    end
   end
 
   describe "#save" do

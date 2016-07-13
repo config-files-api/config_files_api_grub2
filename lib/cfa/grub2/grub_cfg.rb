@@ -15,9 +15,10 @@ module CFA
           submenu = ""
           string.lines.each_with_object([]) do |line, result|
             case line
-            when /menuentry\s*'/ then result << parse_entry(line, submenu)
+            when /menuentry\s+'/ then result << parse_entry(line, submenu)
             when /^}\s*\n/ then submenu = ""
-            when /submenu\s/ then submenu = line[/\s*submenu\s+'([^']+)'.*/, 1]
+            when /submenu\s+'/
+              submenu = line[/\s*submenu\s+'([^']+)'.*/, 1]
             end
           end
         end
@@ -54,6 +55,10 @@ module CFA
       # @return [Array<Hash>] return boot entries containing `title:` as shown
       # on screen and `path:` whole path usable for grub2-set-default including
       # also submenu part of path
+      # @note Some entries are not in fact bootable, such as the
+      # "run snaper rollback" hint-only entry on SUSE. They are ignored.
+      # As a hack, they are recognized by double quote delimiters while the
+      # regular entries use single quotes.
       def boot_entries
         data
       end
