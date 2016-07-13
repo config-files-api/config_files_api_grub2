@@ -17,7 +17,8 @@ module CFA
             case line
             when /menuentry\s+'/ then result << parse_entry(line, submenu)
             when /^}\s*\n/ then submenu = ""
-            when /submenu\s+'/ then submenu = line[/\s*submenu\s+'([^']+)'.*/, 1]
+            when /submenu\s+'/
+              submenu = line[/\s*submenu\s+'([^']+)'.*/, 1]
             end
           end
         end
