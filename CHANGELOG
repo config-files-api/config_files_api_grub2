@@ -1,4 +1,11 @@
 -------------------------------------------------------------------
+Thu Oct 13 12:02:26 UTC 2016 - jreidinger@suse.com
+
+- fix dependency on cfa as it follows semantic versioning
+  (needed for bsc#877047)
+- 0.5.2
+
+-------------------------------------------------------------------
 Wed Jul 13 07:40:52 UTC 2016 - jreidinger@suse.com
 
 - Do not crash for submenu with double quotes (bnc#986005)
