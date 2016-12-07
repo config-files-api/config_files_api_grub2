@@ -1,4 +1,11 @@
 -------------------------------------------------------------------
+Wed Dec  7 08:31:05 UTC 2016 - jreidinger@suse.com
+
+- Use correct configuration file for xen kernel parameters
+  (bsc#1012503)
+- 0.5.3
+
+-------------------------------------------------------------------
 Thu Oct 13 12:02:26 UTC 2016 - jreidinger@suse.com
 
 - fix dependency on cfa as it follows semantic versioning
