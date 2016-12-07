@@ -77,7 +77,7 @@ module CFA
 
       def xen_kernel_params
         @xen_kernel_params ||= KernelParams.new(
-          data["GRUB_CMDLINE_LINUX_XEN"], "GRUB_CMDLINE_LINUX_XEN"
+          data["GRUB_CMDLINE_XEN_DEFAULT"], "GRUB_CMDLINE_XEN_DEFAULT"
         )
       end
 
