@@ -201,15 +201,14 @@ module CFA
         # TODO: replace it via augeas parser when someone write lense
         class ParamTree
           def initialize(line)
-            line ||= ""
-            pairs = line.split(/\s/)
-                        .reject(&:empty?)
-                        .map { |e| e.split("=", 2) }
+            pairs = (line || "").split(/\s/)
+                                .reject(&:empty?)
+                                .map { |e| e.split("=", 2) }
 
             @data = pairs.map do |k, v|
               {
-                key:   k,
-                value: v || true, # kernel param without value have true
+                key:       k,
+                value:     v || true, # kernel param without value have true
                 operation: :keep
               }
             end
