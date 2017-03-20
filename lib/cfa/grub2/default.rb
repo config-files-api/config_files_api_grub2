@@ -185,6 +185,7 @@ module CFA
         def add_parameter(key, value, placer = AppendPlacer.new)
           element = placer.new_element(@tree)
 
+          element[:operation] = :add
           element[:key]   = key
           element[:value] = value
         end
@@ -192,15 +193,13 @@ module CFA
         # Removes parameter from kernel command line.
         # @param matcher [Matcher] to find entry to remove
         def remove_parameter(matcher)
-          @tree.data.reject!(&matcher)
+          @tree.data.select(&matcher).each { |e| e[:operation] = :remove }
         end
 
         # Represents parsed kernel parameters tree. Parses in initialization
         # and backserilized by `to_string`.
         # TODO: replace it via augeas parser when someone write lense
         class ParamTree
-          attr_reader :data
-
           def initialize(line)
             line ||= ""
             pairs = line.split(/\s/)
@@ -211,12 +210,13 @@ module CFA
               {
                 key:   k,
                 value: v || true, # kernel param without value have true
+                operation: :keep
               }
             end
           end
 
           def to_string
-            snippets = @data.map do |e|
+            snippets = data.map do |e|
               if e[:value] == true
                 e[:key]
               else
@@ -225,6 +225,14 @@ module CFA
             end
 
             snippets.join(" ")
+          end
+
+          def data
+            @data.select { |e| e[:operation] != :remove }.freeze
+          end
+
+          def all_data
+            @data
           end
         end
       end
