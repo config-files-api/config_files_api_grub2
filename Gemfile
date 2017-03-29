@@ -5,6 +5,7 @@ gem "cfa", "~> 0.4.3"
 
 group :development, :test do
   gem "rspec"
+  gem "coveralls"
 end
 
 group :development do
