@@ -70,14 +70,15 @@ module CFA
 
       def xen_hypervisor_params
         @xen_hypervisor_params ||= KernelParams.new(
-          data["GRUB_CMDLINE_LINUX_XEN_REPLACE_DEFAULT"],
-          "GRUB_CMDLINE_LINUX_XEN_REPLACE_DEFAULT"
+          data["GRUB_CMDLINE_XEN_DEFAULT"],
+          "GRUB_CMDLINE_XEN_DEFAULT"
         )
       end
 
       def xen_kernel_params
         @xen_kernel_params ||= KernelParams.new(
-          data["GRUB_CMDLINE_XEN_DEFAULT"], "GRUB_CMDLINE_XEN_DEFAULT"
+          data["GRUB_CMDLINE_LINUX_XEN_REPLACE_DEFAULT"],
+          "GRUB_CMDLINE_LINUX_XEN_REPLACE_DEFAULT"
         )
       end
 
@@ -227,7 +228,7 @@ module CFA
           end
 
           def data
-            @data.select { |e| e[:operation] != :remove }.freeze
+            @data.reject { |e| e[:operation] == :remove }.freeze
           end
 
           def all_data

@@ -1,4 +1,11 @@
 -------------------------------------------------------------------
+Wed Mar 29 09:13:56 UTC 2017 - jreidinger@suse.com
+
+- Fix switched xen hypervisor and xen kernel parameters
+  (bsc#1014136)
+- 0.6.1
+
+-------------------------------------------------------------------
 Mon Mar 20 13:52:28 UTC 2017 - jreidinger@suse.com
 
 - adapt to new cfa version (bsc#1023204)

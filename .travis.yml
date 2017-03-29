@@ -10,7 +10,7 @@ addons:
 # use trusty travis infrastructure
 sudo: required
 dist: trusty
-install: gem install rubocop rspec coveralls cfa
+install: gem install -g
 script:
     - COVERAGE=1 rake spec
     - rubocop
