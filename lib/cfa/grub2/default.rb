@@ -228,7 +228,7 @@ module CFA
           end
 
           def data
-            @data.select { |e| e[:operation] != :remove }.freeze
+            @data.reject { |e| e[:operation] == :remove }.freeze
           end
 
           def all_data
