@@ -1,4 +1,11 @@
 -------------------------------------------------------------------
+Wed Mar 29 09:13:56 UTC 2017 - jreidinger@suse.com
+
+- Fix switched xen hypervisor and xen kernel parameters
+  (bsc#1014136)
+- 0.5.4
+
+-------------------------------------------------------------------
 Wed Dec  7 08:31:05 UTC 2016 - jreidinger@suse.com
 
 - Use correct configuration file for xen kernel parameters

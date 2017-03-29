@@ -1,8 +1,10 @@
 source "https://rubygems.org"
 
-gem "cfa ~> 0.3"
+# 0.5.X contain new minimal changes, that needs modification
+gem "cfa", "~> 0.4.3"
 
 group :development, :test do
+  gem "coveralls"
   gem "rspec"
 end
 
