@@ -20,6 +20,10 @@ Style/MultilineOperationIndentation:
 Style/WordArray:
   Enabled: false
 
+# force for array of symbols plain array
+Style/SymbolArray:
+  EnforcedStyle: brackets
+
 # align arrows:
 # "foo"     => true
 # "foo_bar" => false
