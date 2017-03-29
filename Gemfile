@@ -4,8 +4,8 @@ source "https://rubygems.org"
 gem "cfa", "~> 0.4.3"
 
 group :development, :test do
-  gem "rspec"
   gem "coveralls"
+  gem "rspec"
 end
 
 group :development do
