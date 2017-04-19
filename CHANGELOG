@@ -1,4 +1,10 @@
 -------------------------------------------------------------------
+Wed Apr 19 11:50:04 UTC 2017 - jreidinger@suse.com
+
+- fix parsing grub.cfg with multi-level of submenus (bsc#1009025)
+- 0.6.2
+
+-------------------------------------------------------------------
 Wed Mar 29 09:13:56 UTC 2017 - jreidinger@suse.com
 
 - Fix switched xen hypervisor and xen kernel parameters

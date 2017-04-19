@@ -81,6 +81,60 @@ describe CFA::Grub2::GrubCfg do
         )
       end
     end
+
+    context "grub.cfg with multiple submenus" do
+      let(:memory_file) do
+        path = File.expand_path("../fixtures/grub_multilevel.cfg", __FILE__)
+        CFA::MemoryFile.new(File.read(path))
+      end
+
+      it "creates proper path in result" do
+        expect(config.boot_entries).to eq(
+          [{ title: "SLES 12-SP2", path: "SLES 12-SP2" },
+           {
+             title: "SLES 12-SP2, with Linux 4.4.30-69-default-bug1005169",
+             path:  "Advanced options for SLES 12-SP2>" \
+              "SLES 12-SP2, with Linux 4.4.30-69-default-bug1005169"
+           },
+           {
+             title: "SLES 12-SP2, with Linux 4.4.21-69-default",
+             path:  "Advanced options for SLES 12-SP2>"\
+              "SLES 12-SP2, with Linux 4.4.21-69-default"
+           },
+           {
+             title: "SLES 12-SP2, with Linux 4.4.21-68-default",
+             path:  "Advanced options for SLES 12-SP2>"\
+              "SLES 12-SP2, with Linux 4.4.21-68-default"
+           },
+           {
+             title: "SLES 12-SP2, with Xen hypervisor",
+             path:  "SLES 12-SP2, with Xen hypervisor"
+           },
+           {
+             title: "SLES 12-SP2, with Xen 4.7.0_12-23 and "\
+              "Linux 4.4.30-69-default-bug1005169",
+             path:  "Advanced options for SLES 12-SP2 (with Xen hypervisor)>"\
+              "Xen hypervisor, version 4.7.0_12-23>"\
+              "SLES 12-SP2, with Xen 4.7.0_12-23 and " \
+              "Linux 4.4.30-69-default-bug1005169"
+           },
+           {
+             title: "SLES 12-SP2, with Xen 4.7.0_12-23 and "\
+               "Linux 4.4.21-69-default",
+             path:  "Advanced options for SLES 12-SP2 (with Xen hypervisor)>"\
+               "Xen hypervisor, version 4.7.0_12-23>" \
+               "SLES 12-SP2, with Xen 4.7.0_12-23 and Linux 4.4.21-69-default"
+           },
+           {
+             title: "SLES 12-SP2, with Xen 4.7.0_12-23 and "\
+               "Linux 4.4.21-68-default",
+             path:  "Advanced options for SLES 12-SP2 (with Xen hypervisor)>"\
+               "Xen hypervisor, version 4.7.0_12-23>"\
+               "SLES 12-SP2, with Xen 4.7.0_12-23 and Linux 4.4.21-68-default"
+           }]
+        )
+      end
+    end
   end
 
   describe "#save" do
