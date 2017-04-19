@@ -12,13 +12,13 @@ module CFA
       # @private only internal parser
       class Parser
         def self.parse(string)
-          submenu = ""
+          submenu = []
           string.lines.each_with_object([]) do |line, result|
             case line
             when /menuentry\s+'/ then result << parse_entry(line, submenu)
-            when /^}\s*\n/ then submenu = ""
+            when /^\s*}\s*\n/ then submenu.pop
             when /submenu\s+'/
-              submenu = line[/\s*submenu\s+'([^']+)'.*/, 1]
+              submenu.push(line[/\s*submenu\s+'([^']+)'.*/, 1])
             end
           end
         end
@@ -34,9 +34,10 @@ module CFA
 
         def self.parse_entry(line, submenu)
           entry = line[/\s*menuentry\s+'([^']+)'.*/, 1]
+          submenu.push(entry)
           {
             title: entry,
-            path:  submenu.empty? ? entry : "#{submenu}>#{entry}"
+            path:  submenu.join(">")
           }
         end
         private_class_method :parse_entry
