@@ -27,7 +27,8 @@ module CFA
       PATH = "/etc/default/grub".freeze
 
       def initialize(file_handler: nil)
-        super(AugeasParser.new("sysconfig.lns"), PATH, file_handler: file_handler)
+        super(AugeasParser.new("sysconfig.lns"), PATH,
+          file_handler: file_handler)
       end
 
       def save(changes_only: false)
