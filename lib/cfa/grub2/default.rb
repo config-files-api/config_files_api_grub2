@@ -24,11 +24,11 @@ module CFA
         timeout:        "GRUB_TIMEOUT"
       )
 
-      PARSER = AugeasParser.new("sysconfig.lns")
       PATH = "/etc/default/grub".freeze
 
       def initialize(file_handler: nil)
-        super(PARSER, PATH, file_handler: file_handler)
+        super(AugeasParser.new("sysconfig.lns"), PATH,
+          file_handler: file_handler)
       end
 
       def save(changes_only: false)

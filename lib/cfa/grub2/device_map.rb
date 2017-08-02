@@ -16,11 +16,11 @@ module CFA
     #   Limitation is caused by BIOS Int 13 used by grub2 for selecting boot
     #   device.
     class DeviceMap < BaseModel
-      PARSER = AugeasParser.new("device_map.lns")
       PATH = "/boot/grub2/device.map".freeze
 
       def initialize(file_handler: nil)
-        super(PARSER, PATH, file_handler: file_handler)
+        super(AugeasParser.new("device_map.lns"), PATH,
+          file_handler: file_handler)
       end
 
       def save(changes_only: false)
