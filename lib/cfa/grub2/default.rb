@@ -49,7 +49,7 @@ module CFA
         kernels = [kernel_params, xen_hypervisor_params, xen_kernel_params,
                    recovery_params]
         kernels.each do |kernel|
-          param_line = data[kernel.key]
+          param_line = value_for(kernel.key)
           kernel.replace(param_line) if param_line
         end
       end
@@ -64,27 +64,28 @@ module CFA
 
       def kernel_params
         @kernel_params ||= KernelParams.new(
-          data["GRUB_CMDLINE_LINUX_DEFAULT"], "GRUB_CMDLINE_LINUX_DEFAULT"
+          value_for("GRUB_CMDLINE_LINUX_DEFAULT"), "GRUB_CMDLINE_LINUX_DEFAULT"
         )
       end
 
       def xen_hypervisor_params
         @xen_hypervisor_params ||= KernelParams.new(
-          data["GRUB_CMDLINE_XEN_DEFAULT"],
+          value_for("GRUB_CMDLINE_XEN_DEFAULT"),
           "GRUB_CMDLINE_XEN_DEFAULT"
         )
       end
 
       def xen_kernel_params
         @xen_kernel_params ||= KernelParams.new(
-          data["GRUB_CMDLINE_LINUX_XEN_REPLACE_DEFAULT"],
+          value_for("GRUB_CMDLINE_LINUX_XEN_REPLACE_DEFAULT"),
           "GRUB_CMDLINE_LINUX_XEN_REPLACE_DEFAULT"
         )
       end
 
       def recovery_params
         @recovery_params ||= KernelParams.new(
-          data["GRUB_CMDLINE_LINUX_RECOVERY"], "GRUB_CMDLINE_LINUX_RECOVERY"
+          value_for("GRUB_CMDLINE_LINUX_RECOVERY"),
+          "GRUB_CMDLINE_LINUX_RECOVERY"
         )
       end
 
@@ -102,13 +103,14 @@ module CFA
       end
 
       def terminal
-        case data["GRUB_TERMINAL"]
+        value = value_for("GRUB_ENABLE_CRYPTODISK")
+        case value
         when "", nil   then nil
         when "console" then :console
         when "serial"  then :serial
         when "gfxterm" then :gfxterm
         else
-          raise "unknown GRUB_TERMINAL option #{data["GRUB_TERMINAL"].inspect}"
+          raise "unknown GRUB_TERMINAL option #{value.inspect}"
         end
       end
 
@@ -127,7 +129,13 @@ module CFA
       end
 
       def serial_console
-        data["GRUB_SERIAL_COMMAND"]
+        value_for("GRUB_SERIAL_COMMAND")
+      end
+
+    private
+
+      def value_for(key)
+        data[key].respond_to?(:value) ? data[key].value : data[key]
       end
 
       # Represents kernel append line with helpers to easier modification.
