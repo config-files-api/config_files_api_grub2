@@ -75,7 +75,7 @@ describe CFA::Grub2::Default do
 
   describe "#kernel_params" do
     let(:file_content) do
-      "GRUB_CMDLINE_LINUX_DEFAULT=\"quite console=S0 console=S1 vga=0x400\"" \
+      "GRUB_CMDLINE_LINUX_DEFAULT=\"quite console=S0 console=S1 vga=0x400\" " \
         "# comment 1\n"
     end
 
