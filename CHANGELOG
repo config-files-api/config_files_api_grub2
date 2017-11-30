@@ -1,4 +1,10 @@
--------------------------------------------------------------------
+-------------------------------------------------------------------------
+Thu Nov 30 14:35:47 UTC 2017 - jreidinger@suse.com
+
+- fix reading GRUB_TERMINAL (caused by fix for bsc#1068578)
+- 0.6.5
+
+-------------------------------------------------------------
 Thu Nov 30 07:45:45 UTC 2017 - jreidinger@suse.com
 
 - avoid crash if config file uses trailing comment (bsc#1068578)

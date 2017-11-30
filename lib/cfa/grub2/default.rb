@@ -103,7 +103,7 @@ module CFA
       end
 
       def terminal
-        value = value_for("GRUB_ENABLE_CRYPTODISK")
+        value = value_for("GRUB_TERMINAL")
         case value
         when "", nil   then nil
         when "console" then :console
