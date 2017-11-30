@@ -75,9 +75,10 @@ describe CFA::Grub2::Default do
     context "GRUB_TERMINAL is something else" do
       let(:file_content) { "GRUB_TERMINAL=\"unknown\"\n" }
       it "raises runtime error" do
-        expect{config.terminal}.to raise_error(RuntimeError, /unknown GRUB_TERMINAL/)
+        expect { config.terminal }.to(
+          raise_error(RuntimeError, /unknown GRUB_TERMINAL/)
+        )
       end
-
     end
   end
 
