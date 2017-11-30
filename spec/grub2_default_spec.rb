@@ -43,6 +43,44 @@ describe CFA::Grub2::Default do
     end
   end
 
+  describe "#terminal" do
+    context "GRUB_TERMINAL is empty" do
+      let(:file_content) { "GRUB_TERMINAL=\"\"\n" }
+      it "returns nil" do
+        expect(config.terminal).to eq nil
+      end
+    end
+
+    context "GRUB_TERMINAL is console" do
+      let(:file_content) { "GRUB_TERMINAL=\"console\"\n" }
+      it "returns :console" do
+        expect(config.terminal).to eq :console
+      end
+    end
+
+    context "GRUB_TERMINAL is serial" do
+      let(:file_content) { "GRUB_TERMINAL=\"serial\"\n" }
+      it "returns :serial" do
+        expect(config.terminal).to eq :serial
+      end
+    end
+
+    context "GRUB_TERMINAL is gfxterm" do
+      let(:file_content) { "GRUB_TERMINAL=\"gfxterm\"\n" }
+      it "returns :gfxterm" do
+        expect(config.terminal).to eq :gfxterm
+      end
+    end
+
+    context "GRUB_TERMINAL is something else" do
+      let(:file_content) { "GRUB_TERMINAL=\"unknown\"\n" }
+      it "raises runtime error" do
+        expect{config.terminal}.to raise_error(RuntimeError, /unknown GRUB_TERMINAL/)
+      end
+
+    end
+  end
+
   describe "#os_prober" do
     let(:file_content) { "GRUB_DISABLE_OS_PROBER=true\n" }
 
