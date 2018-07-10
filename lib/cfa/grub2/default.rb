@@ -102,6 +102,7 @@ module CFA
           true_value: "y", false_value: "n")
       end
 
+      VALID_TERMINAL_OPTIONS = [:serial, :console, :gfxterm].freeze
       # Reads value of GRUB_TERMINAL from /etc/default/grub
       #
       # GRUB_TERMINAL option allows multiple values as space separated string
@@ -114,17 +115,14 @@ module CFA
         return nil if values.nil? || values.empty?
 
         values.split.map do |value|
-          case value
-          when "console" then :console
-          when "serial"  then :serial
-          when "gfxterm" then :gfxterm
+          if VALID_TERMINAL_OPTIONS.include?(value.to_sym)
+            value.to_sym
           else
             raise "unknown GRUB_TERMINAL option #{value.inspect}"
           end
         end
       end
 
-      VALID_TERMINAL_OPTIONS = [:serial, :console, :gfxterm].freeze
       def terminal=(value)
         if !VALID_TERMINAL_OPTIONS.include?(value)
           raise ArgumentError, "invalid value #{value.inspect}"
