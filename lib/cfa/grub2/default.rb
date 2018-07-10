@@ -102,6 +102,7 @@ module CFA
           true_value: "y", false_value: "n")
       end
 
+      # Reads value of GRUB_TERMINAL from /etc/default/grub
       def terminal
         value = value_for("GRUB_TERMINAL")
         case value
