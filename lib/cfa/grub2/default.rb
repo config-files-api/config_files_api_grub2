@@ -104,14 +104,18 @@ module CFA
 
       # Reads value of GRUB_TERMINAL from /etc/default/grub
       def terminal
-        value = value_for("GRUB_TERMINAL")
-        case value
-        when "", nil   then nil
-        when "console" then :console
-        when "serial"  then :serial
-        when "gfxterm" then :gfxterm
-        else
-          raise "unknown GRUB_TERMINAL option #{value.inspect}"
+        values = value_for("GRUB_TERMINAL")
+
+        return nil if values.nil? || values.empty?
+
+        values.split.map do |value|
+          case value
+          when "console" then :console
+          when "serial"  then :serial
+          when "gfxterm" then :gfxterm
+          else
+            raise "unknown GRUB_TERMINAL option #{value.inspect}"
+          end
         end
       end
 
