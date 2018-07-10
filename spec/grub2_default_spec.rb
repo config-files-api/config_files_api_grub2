@@ -53,22 +53,29 @@ describe CFA::Grub2::Default do
 
     context "GRUB_TERMINAL is console" do
       let(:file_content) { "GRUB_TERMINAL=\"console\"\n" }
-      it "returns :console" do
-        expect(config.terminal).to eq :console
+      it "returns [:console]" do
+        expect(config.terminal).to eq [:console]
       end
     end
 
     context "GRUB_TERMINAL is serial" do
       let(:file_content) { "GRUB_TERMINAL=\"serial\"\n" }
-      it "returns :serial" do
-        expect(config.terminal).to eq :serial
+      it "returns [:serial]" do
+        expect(config.terminal).to eq [:serial]
       end
     end
 
     context "GRUB_TERMINAL is gfxterm" do
       let(:file_content) { "GRUB_TERMINAL=\"gfxterm\"\n" }
-      it "returns :gfxterm" do
-        expect(config.terminal).to eq :gfxterm
+      it "returns [:gfxterm]" do
+        expect(config.terminal).to eq [:gfxterm]
+      end
+    end
+
+    context "GRUB_TERMINAL is \"console serial\"" do
+      let(:file_content) { "GRUB_TERMINAL=\"console serial\"\n" }
+      it "returns [:console, :serial]" do
+        expect(config.terminal).to eq [:console, :serial]
       end
     end
 
