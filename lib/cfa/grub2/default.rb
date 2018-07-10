@@ -103,6 +103,11 @@ module CFA
       end
 
       # Reads value of GRUB_TERMINAL from /etc/default/grub
+      #
+      # GRUB_TERMINAL option allows multiple values as space separated string
+      #
+      # @return [Array<Symbol>, nil] an array of symbols where each symbol
+      #                              represents supported terminal definition
       def terminal
         values = value_for("GRUB_TERMINAL")
 
