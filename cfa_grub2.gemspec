@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = "cfa_grub2"
-  s.version     = "0.6.5"
+  s.version     = "0.6.6"
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Josef Reidinger"]
   s.email       = ["jreidinger@suse.cz"]

@@ -1,4 +1,12 @@
 -------------------------------------------------------------------------
+Tue Jul 10 14:35:47 UTC 2017 - mfilka@suse.com
+
+- bnc#1053559
+  - modified Grub2::Default#terminal to handle multiple values in
+    GRUB_TERMINAL
+- 0.6.6
+
+-------------------------------------------------------------------------
 Thu Nov 30 14:35:47 UTC 2017 - jreidinger@suse.com
 
 - fix reading GRUB_TERMINAL (caused by fix for bsc#1068578)
