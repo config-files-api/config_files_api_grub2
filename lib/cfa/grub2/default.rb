@@ -109,6 +109,7 @@ module CFA
       #
       # @return [Array<Symbol>, nil] an array of symbols where each symbol
       #                              represents supported terminal definition
+      #                              nil if value is undefined or empty
       def terminal
         values = value_for("GRUB_TERMINAL")
 
