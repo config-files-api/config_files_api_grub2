@@ -89,6 +89,26 @@ describe CFA::Grub2::Default do
     end
   end
 
+  describe "#terminal=" do
+    let(:file_content) { "GRUB_TERMINAL=\"\"\n" }
+
+    context "list of valid options" do
+      it "accepts the values" do
+        config.terminal = [:serial, :console]
+        config.save
+
+        expect(memory_file.content.strip).to eq("GRUB_TERMINAL=\"serial console\"")
+      end
+    end
+
+    context "list with some invalid option" do
+      it "raises an ArgumentError exception" do
+        input = [:unknown, :values]
+        expect { config.terminal = input }.to raise_error(ArgumentError)
+      end
+    end
+  end
+
   describe "#os_prober" do
     let(:file_content) { "GRUB_DISABLE_OS_PROBER=true\n" }
 

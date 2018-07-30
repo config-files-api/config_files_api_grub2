@@ -135,7 +135,7 @@ module CFA
 
         raise ArgumentError, "invalid: #{values.inspect}" if values.any? { |v| !VALID_TERMINAL_OPTIONS.include?(v) }
 
-        generic_set("GRUB_TERMINAL", values.joint(" "))
+        generic_set("GRUB_TERMINAL", values.join(" "))
       end
 
       def serial_console=(value)
