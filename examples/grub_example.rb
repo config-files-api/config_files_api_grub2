@@ -1,9 +1,9 @@
-$LOAD_PATH << File.expand_path("../../lib", __FILE__)
+$LOAD_PATH << File.expand_path("../lib", __dir__)
 
 require "cfa/grub2/default"
 require "cfa/memory_file"
 
-grub_path = File.expand_path("../data/grub.cfg", __FILE__)
+grub_path = File.expand_path("data/grub.cfg", __dir__)
 memory_file = CFA::MemoryFile.new(File.read(grub_path))
 config = CFA::Grub2::Default.new(file_handler: memory_file)
 config.load

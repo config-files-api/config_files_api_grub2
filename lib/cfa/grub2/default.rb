@@ -90,7 +90,7 @@ module CFA
       end
 
       def recovery_entry
-        @recovery ||= BooleanValue.new(
+        @recovery_entry ||= BooleanValue.new(
           "GRUB_DISABLE_RECOVERY", self,
           # grub key is disable, so use reverse logic
           true_value: "false", false_value: "true"
@@ -116,11 +116,10 @@ module CFA
         return nil if values.nil? || values.empty?
 
         values.split.map do |value|
-          if VALID_TERMINAL_OPTIONS.include?(value.to_sym)
-            value.to_sym
-          else
-            raise "unknown GRUB_TERMINAL option #{value.inspect}"
-          end
+          msg = "unknown GRUB_TERMINAL option #{value.inspect}"
+          raise msg if !VALID_TERMINAL_OPTIONS.include?(value.to_sym)
+
+          value.to_sym
         end
       end
 
@@ -133,7 +132,9 @@ module CFA
       def terminal=(values)
         values = [] if values.nil?
 
-        raise ArgumentError, "invalid: #{values.inspect}" if values.any? { |v| !VALID_TERMINAL_OPTIONS.include?(v) }
+        msg = "A value is invalid: #{values.inspect}".freeze
+        invalid = values.any? { |v| !VALID_TERMINAL_OPTIONS.include?(v) }
+        raise ArgumentError, msg if invalid
 
         generic_set("GRUB_TERMINAL", values.join(" "))
       end

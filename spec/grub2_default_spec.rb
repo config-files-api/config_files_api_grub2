@@ -97,7 +97,8 @@ describe CFA::Grub2::Default do
         config.terminal = [:serial, :console]
         config.save
 
-        expect(memory_file.content.strip).to eq("GRUB_TERMINAL=\"serial console\"")
+        RESULT = "GRUB_TERMINAL=\"serial console\"".freeze
+        expect(memory_file.content.strip).to eq(RESULT)
       end
     end
 
@@ -215,7 +216,8 @@ describe CFA::Grub2::Default do
         config.save
 
         # TODO: check why augeas sometimes espace and sometimes not
-        expect(memory_file.content.strip).to eq("GRUB_ENABLE_CRYPTODISK=\"true\"")
+        RESULT = "GRUB_ENABLE_CRYPTODISK=\"true\"".freeze
+        expect(memory_file.content.strip).to eq(RESULT)
       end
     end
   end
