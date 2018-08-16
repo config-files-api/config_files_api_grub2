@@ -4,7 +4,7 @@ require "cfa/memory_file"
 
 describe CFA::Grub2::GrubCfg do
   let(:memory_file) do
-    path = File.expand_path("../fixtures/grub.cfg", __FILE__)
+    path = File.expand_path("fixtures/grub.cfg", __dir__)
     CFA::MemoryFile.new(File.read(path))
   end
   subject(:config) do
@@ -55,7 +55,7 @@ describe CFA::Grub2::GrubCfg do
 
     context "grub.cfg with snapper boot entry" do
       let(:memory_file) do
-        path = File.expand_path("../fixtures/grub-with-snapper.cfg", __FILE__)
+        path = File.expand_path("fixtures/grub-with-snapper.cfg", __dir__)
         CFA::MemoryFile.new(File.read(path))
       end
 
@@ -84,7 +84,7 @@ describe CFA::Grub2::GrubCfg do
 
     context "grub.cfg with multiple submenus" do
       let(:memory_file) do
-        path = File.expand_path("../fixtures/grub_multilevel.cfg", __FILE__)
+        path = File.expand_path("fixtures/grub_multilevel.cfg", __dir__)
         CFA::MemoryFile.new(File.read(path))
       end
 

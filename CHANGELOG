@@ -1,4 +1,15 @@
 -------------------------------------------------------------------------
+Tue Jul 10 14:35:47 UTC 2017 - mfilka@suse.com
+
+- bnc#1053559
+  - backward incompatible change in API
+  - modified Grub2::Default#terminal and terminal= to handle multiple
+    values in GRUB_TERMINAL. Former one returns array (was string) of
+    strings since now. Later one expects array of strings as argument,
+    array items are joined into space separated value of the option.
+- 1.0.0
+
+-------------------------------------------------------------------------
 Thu Nov 30 14:35:47 UTC 2017 - jreidinger@suse.com
 
 - fix reading GRUB_TERMINAL (caused by fix for bsc#1068578)

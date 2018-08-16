@@ -53,22 +53,29 @@ describe CFA::Grub2::Default do
 
     context "GRUB_TERMINAL is console" do
       let(:file_content) { "GRUB_TERMINAL=\"console\"\n" }
-      it "returns :console" do
-        expect(config.terminal).to eq :console
+      it "returns [:console]" do
+        expect(config.terminal).to eq [:console]
       end
     end
 
     context "GRUB_TERMINAL is serial" do
       let(:file_content) { "GRUB_TERMINAL=\"serial\"\n" }
-      it "returns :serial" do
-        expect(config.terminal).to eq :serial
+      it "returns [:serial]" do
+        expect(config.terminal).to eq [:serial]
       end
     end
 
     context "GRUB_TERMINAL is gfxterm" do
       let(:file_content) { "GRUB_TERMINAL=\"gfxterm\"\n" }
-      it "returns :gfxterm" do
-        expect(config.terminal).to eq :gfxterm
+      it "returns [:gfxterm]" do
+        expect(config.terminal).to eq [:gfxterm]
+      end
+    end
+
+    context "GRUB_TERMINAL is \"console serial\"" do
+      let(:file_content) { "GRUB_TERMINAL=\"console serial\"\n" }
+      it "returns [:console, :serial]" do
+        expect(config.terminal).to eq [:console, :serial]
       end
     end
 
@@ -78,6 +85,27 @@ describe CFA::Grub2::Default do
         expect { config.terminal }.to(
           raise_error(RuntimeError, /unknown GRUB_TERMINAL/)
         )
+      end
+    end
+  end
+
+  describe "#terminal=" do
+    let(:file_content) { "GRUB_TERMINAL=\"\"\n" }
+
+    context "list of valid options" do
+      it "accepts the values" do
+        config.terminal = [:serial, :console]
+        config.save
+
+        RESULT = "GRUB_TERMINAL=\"serial console\"".freeze
+        expect(memory_file.content.strip).to eq(RESULT)
+      end
+    end
+
+    context "list with some invalid option" do
+      it "raises an ArgumentError exception" do
+        input = [:unknown, :values]
+        expect { config.terminal = input }.to raise_error(ArgumentError)
       end
     end
   end
@@ -188,7 +216,8 @@ describe CFA::Grub2::Default do
         config.save
 
         # TODO: check why augeas sometimes espace and sometimes not
-        expect(memory_file.content).to eq("GRUB_ENABLE_CRYPTODISK=\"true\"\n")
+        RESULT = "GRUB_ENABLE_CRYPTODISK=\"true\"".freeze
+        expect(memory_file.content.strip).to eq(RESULT)
       end
     end
   end

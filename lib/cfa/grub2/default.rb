@@ -90,7 +90,7 @@ module CFA
       end
 
       def recovery_entry
-        @recovery ||= BooleanValue.new(
+        @recovery_entry ||= BooleanValue.new(
           "GRUB_DISABLE_RECOVERY", self,
           # grub key is disable, so use reverse logic
           true_value: "false", false_value: "true"
@@ -102,25 +102,41 @@ module CFA
           true_value: "y", false_value: "n")
       end
 
+      VALID_TERMINAL_OPTIONS = [:serial, :console, :gfxterm].freeze
+      # Reads value of GRUB_TERMINAL from /etc/default/grub
+      #
+      # GRUB_TERMINAL option allows multiple values as space separated string
+      #
+      # @return [Array<Symbol>, nil] an array of symbols where each symbol
+      #                              represents supported terminal definition
+      #                              nil if value is undefined or empty
       def terminal
-        value = value_for("GRUB_TERMINAL")
-        case value
-        when "", nil   then nil
-        when "console" then :console
-        when "serial"  then :serial
-        when "gfxterm" then :gfxterm
-        else
-          raise "unknown GRUB_TERMINAL option #{value.inspect}"
+        values = value_for("GRUB_TERMINAL")
+
+        return nil if values.nil? || values.empty?
+
+        values.split.map do |value|
+          msg = "unknown GRUB_TERMINAL option #{value.inspect}"
+          raise msg if !VALID_TERMINAL_OPTIONS.include?(value.to_sym)
+
+          value.to_sym
         end
       end
 
-      VALID_TERMINAL_OPTIONS = [:serial, :console, :gfxterm].freeze
-      def terminal=(value)
-        if !VALID_TERMINAL_OPTIONS.include?(value)
-          raise ArgumentError, "invalid value #{value.inspect}"
-        end
+      # Sets GRUB_TERMINAL option
+      #
+      # Raises an ArgumentError exception in case of invalid value
+      #
+      # @param values [Array<Symbol>, nil] list of accepted terminal valuesi
+      #                                    (@see VALID_TERMINAL_OPTIONS)
+      def terminal=(values)
+        values = [] if values.nil?
 
-        generic_set("GRUB_TERMINAL", value.to_s)
+        msg = "A value is invalid: #{values.inspect}".freeze
+        invalid = values.any? { |v| !VALID_TERMINAL_OPTIONS.include?(v) }
+        raise ArgumentError, msg if invalid
+
+        generic_set("GRUB_TERMINAL", values.join(" "))
       end
 
       def serial_console=(value)
