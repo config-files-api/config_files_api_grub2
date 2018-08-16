@@ -140,7 +140,7 @@ module CFA
       end
 
       def serial_console=(value)
-        self.terminal = :serial
+        self.terminal = [:serial]
         generic_set("GRUB_SERIAL_COMMAND", value)
       end
 
