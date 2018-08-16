@@ -110,6 +110,18 @@ describe CFA::Grub2::Default do
     end
   end
 
+  describe "#serial_console=" do
+    let(:file_content) { "GRUB_TERMINAL=\"\"\n" }
+
+    it "sets GRUB_SERIAL_COMMAND" do
+      config.serial_console = "tty"
+      config.save
+
+      RESULT = "GRUB_TERMINAL=\"serial\"\nGRUB_SERIAL_COMMAND=\"tty\"".freeze
+      expect(memory_file.content.strip).to eq(RESULT)
+    end
+  end
+
   describe "#os_prober" do
     let(:file_content) { "GRUB_DISABLE_OS_PROBER=true\n" }
 
