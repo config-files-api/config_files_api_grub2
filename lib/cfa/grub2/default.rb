@@ -146,7 +146,7 @@ module CFA
       #
       # @param value [String] value for GRUB_SERIAL_COMMAND
       def serial_console=(value)
-        self.terminal = (self.terminal || []) | [:serial]
+        self.terminal = (terminal || []) | [:serial]
         generic_set("GRUB_SERIAL_COMMAND", value)
       end
 
