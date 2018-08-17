@@ -127,7 +127,7 @@ module CFA
       #
       # Raises an ArgumentError exception in case of invalid value
       #
-      # @param values [Array<Symbol>, nil] list of accepted terminal valuesi
+      # @param values [Array<Symbol>, nil] list of accepted terminal values
       #                                    (@see VALID_TERMINAL_OPTIONS)
       def terminal=(values)
         values = [] if values.nil?
@@ -139,8 +139,14 @@ module CFA
         generic_set("GRUB_TERMINAL", values.join(" "))
       end
 
+      # Sets GRUB_SERIAL_COMMAND option
+      #
+      # Updates GRUB_SERIAL_COMMAND with given value, also enables serial
+      # console in GRUB_TERMINAL
+      #
+      # @param value [String] value for GRUB_SERIAL_COMMAND
       def serial_console=(value)
-        self.terminal = :serial
+        self.terminal = (terminal || []) | [:serial]
         generic_set("GRUB_SERIAL_COMMAND", value)
       end
 
