@@ -31,7 +31,7 @@ module CFA
           file_handler: file_handler)
       end
 
-      def save(changes_only: false)
+      def save
         # serialize kernel params object before save
         kernels = [@kernel_params, @xen_hypervisor_params, @xen_kernel_params,
                    @recovery_params]
