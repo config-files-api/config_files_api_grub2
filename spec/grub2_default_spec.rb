@@ -110,7 +110,7 @@ describe CFA::Grub2::Default do
     end
   end
 
-  describe "#serial_console=" do
+  describe "#serial_console=,#serial_console" do
     let(:file_content) { "GRUB_TERMINAL=\"\"\n" }
 
     it "sets GRUB_SERIAL_COMMAND" do
@@ -119,6 +119,7 @@ describe CFA::Grub2::Default do
 
       result = "GRUB_TERMINAL=\"serial\"\nGRUB_SERIAL_COMMAND=\"tty\"".freeze
       expect(memory_file.content.strip).to eq(result)
+      expect(config.serial_console).to eq("tty")
     end
   end
 
@@ -141,7 +142,7 @@ describe CFA::Grub2::Default do
     let(:file_content) { "GRUB_ENABLE_CRYPTODISK=n\n" }
 
     it "returns object representing boolean state" do
-      expect(config.os_prober).to be_a(boolean_value_class)
+      expect(config.cryptodisk).to be_a(boolean_value_class)
       # few simple test to verify params
       expect(config.cryptodisk.enabled?).to eq(false)
 
@@ -149,6 +150,21 @@ describe CFA::Grub2::Default do
       config.cryptodisk.enable
       config.save
       expect(memory_file.content).to eq("GRUB_ENABLE_CRYPTODISK=y\n")
+    end
+  end
+
+  describe "#recovery_entry" do
+    let(:file_content) { "GRUB_DISABLE_RECOVERY=true\n" }
+
+    it "returns object representing boolean state" do
+      expect(config.recovery_entry).to be_a(boolean_value_class)
+      # few simple test to verify params
+      expect(config.recovery_entry.enabled?).to eq(false)
+
+      # and store test
+      config.recovery_entry.enable
+      config.save
+      expect(memory_file.content).to eq("GRUB_DISABLE_RECOVERY=false\n")
     end
   end
 
