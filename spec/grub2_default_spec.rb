@@ -97,8 +97,8 @@ describe CFA::Grub2::Default do
         config.terminal = [:serial, :console]
         config.save
 
-        RESULT = "GRUB_TERMINAL=\"serial console\"".freeze
-        expect(memory_file.content.strip).to eq(RESULT)
+        result = "GRUB_TERMINAL=\"serial console\"".freeze
+        expect(memory_file.content.strip).to eq(result)
       end
     end
 
@@ -117,8 +117,8 @@ describe CFA::Grub2::Default do
       config.serial_console = "tty"
       config.save
 
-      RESULT = "GRUB_TERMINAL=\"serial\"\nGRUB_SERIAL_COMMAND=\"tty\"".freeze
-      expect(memory_file.content.strip).to eq(RESULT)
+      result = "GRUB_TERMINAL=\"serial\"\nGRUB_SERIAL_COMMAND=\"tty\"".freeze
+      expect(memory_file.content.strip).to eq(result)
     end
   end
 
