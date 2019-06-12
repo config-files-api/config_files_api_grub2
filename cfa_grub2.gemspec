@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = ">= 1.3.6"
 
-  s.add_dependency "cfa", "~> 0.5"
+  s.add_dependency "cfa", "~> 1.0"
 
   s.files        = Dir["{lib}/**/*.rb"]
   s.require_path = "lib"
