@@ -246,8 +246,8 @@ describe CFA::Grub2::Default do
         config.save
 
         # TODO: check why augeas sometimes espace and sometimes not
-        RESULT = "GRUB_ENABLE_CRYPTODISK=\"true\"".freeze
-        expect(memory_file.content.strip).to eq(RESULT)
+        result = "GRUB_ENABLE_CRYPTODISK=\"true\""
+        expect(memory_file.content.strip).to eq(result)
       end
     end
   end
