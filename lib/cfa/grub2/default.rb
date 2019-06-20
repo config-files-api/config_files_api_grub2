@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "cfa/base_model"
 require "cfa/augeas_parser"
 require "cfa/placer"
@@ -24,7 +26,7 @@ module CFA
         timeout:        "GRUB_TIMEOUT"
       )
 
-      PATH = "/etc/default/grub".freeze
+      PATH = "/etc/default/grub"
 
       def initialize(file_handler: nil)
         super(AugeasParser.new("sysconfig.lns"), PATH,
@@ -99,7 +101,7 @@ module CFA
 
       def cryptodisk
         @cryptodisk ||= BooleanValue.new("GRUB_ENABLE_CRYPTODISK", self,
-          true_value: "y", false_value: "n")
+                                         true_value: "y", false_value: "n")
       end
 
       VALID_TERMINAL_OPTIONS = [:serial, :console, :gfxterm].freeze
@@ -132,7 +134,7 @@ module CFA
       def terminal=(values)
         values = [] if values.nil?
 
-        msg = "A value is invalid: #{values.inspect}".freeze
+        msg = "A value is invalid: #{values.inspect}"
         invalid = values.any? { |v| !VALID_TERMINAL_OPTIONS.include?(v) }
         raise ArgumentError, msg if invalid
 

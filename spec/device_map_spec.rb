@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative "spec_helper"
 require "cfa/grub2/device_map"
 require "cfa/memory_file"

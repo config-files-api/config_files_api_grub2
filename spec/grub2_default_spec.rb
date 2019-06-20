@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative "spec_helper"
 require "cfa/grub2/default"
 require "cfa/memory_file"
@@ -97,7 +99,7 @@ describe CFA::Grub2::Default do
         config.terminal = [:serial, :console]
         config.save
 
-        result = "GRUB_TERMINAL=\"serial console\"".freeze
+        result = "GRUB_TERMINAL=\"serial console\""
         expect(memory_file.content.strip).to eq(result)
       end
     end
@@ -117,7 +119,7 @@ describe CFA::Grub2::Default do
       config.serial_console = "tty"
       config.save
 
-      result = "GRUB_TERMINAL=\"serial\"\nGRUB_SERIAL_COMMAND=\"tty\"".freeze
+      result = "GRUB_TERMINAL=\"serial\"\nGRUB_SERIAL_COMMAND=\"tty\""
       expect(memory_file.content.strip).to eq(result)
       expect(config.serial_console).to eq("tty")
     end

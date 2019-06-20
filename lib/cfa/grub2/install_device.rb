@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "cfa/base_model"
 
 module CFA
@@ -36,7 +38,7 @@ module CFA
 
     # Model representing configuration in file /etc/default/grub_installdevice
     class InstallDevice < BaseModel
-      PATH = "/etc/default/grub_installdevice".freeze
+      PATH = "/etc/default/grub_installdevice"
 
       def initialize(file_handler: nil)
         super(InstallDeviceParser, PATH, file_handler: file_handler)
