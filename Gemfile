@@ -2,7 +2,7 @@
 
 source "https://rubygems.org"
 
-gem "cfa", "~> 1.0"
+gem "cfa", "~> 1.0", path: "../cfa"
 
 group :development, :test do
   gem "coveralls"
