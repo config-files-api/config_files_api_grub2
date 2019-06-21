@@ -1,4 +1,4 @@
-# typed: true
+# typed: strict
 # frozen_string_literal: true
 
 require "cfa/base_model"
@@ -14,8 +14,9 @@ module CFA
 
       # @private only internal parser
       class Parser
+        sig { params(string: String).returns(T::Array[String]) }
         def self.parse(string)
-          submenu = []
+          submenu = T.let([], T::Array[String])
           string.lines.each_with_object([]) do |line, result|
             case line
             when /menuentry\s+'/ then result << parse_entry(line, submenu)
@@ -26,15 +27,23 @@ module CFA
           end
         end
 
+        sig { params(_string: String).void }
         def self.serialize(_string)
           raise NotImplementedError,
                 "Serializing not implemented, use grub2 generator"
         end
 
+        sig { returns(T::Array[T.untyped]) }
         def self.empty
           []
         end
 
+        sig do
+          params(
+            line:    String,
+            submenu: T::Array[String]
+          ).returns(T::Hash[Symbol, String])
+        end
         def self.parse_entry(line, submenu)
           entry = line[/\s*menuentry\s+'([^']+)'.*/, 1]
           submenu.push(entry)
@@ -46,6 +55,7 @@ module CFA
         private_class_method :parse_entry
       end
 
+      sig { params(file_handler: T.untyped).void }
       def initialize(file_handler: nil)
         super(Parser, PATH, file_handler: file_handler)
       end
@@ -63,6 +73,7 @@ module CFA
       # "run snaper rollback" hint-only entry on SUSE. They are ignored.
       # As a hack, they are recognized by double quote delimiters while the
       # regular entries use single quotes.
+      sig { returns(T::Array[T::Hash[Symbol, String]]) }
       def boot_entries
         data
       end
