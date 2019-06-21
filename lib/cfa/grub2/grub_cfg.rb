@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "cfa/base_model"
 
 module CFA
@@ -7,7 +9,7 @@ module CFA
     #
     # - List of generated sections including translations
     class GrubCfg < BaseModel
-      PATH = "/boot/grub2/grub.cfg".freeze
+      PATH = "/boot/grub2/grub.cfg"
 
       # @private only internal parser
       class Parser
@@ -25,7 +27,7 @@ module CFA
 
         def self.serialize(_string)
           raise NotImplementedError,
-            "Serializing not implemented, use grub2 generator"
+                "Serializing not implemented, use grub2 generator"
         end
 
         def self.empty

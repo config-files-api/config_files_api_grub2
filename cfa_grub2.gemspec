@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 Gem::Specification.new do |s|
   s.name        = "cfa_grub2"
-  s.version     = "1.0.1"
+  s.version     = "2.0.0"
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Josef Reidinger"]
   s.email       = ["jreidinger@suse.cz"]
@@ -12,7 +14,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = ">= 1.3.6"
 
-  s.add_dependency "cfa", "~> 0.5"
+  s.add_dependency "cfa", "~> 1.0"
 
   s.files        = Dir["{lib}/**/*.rb"]
   s.require_path = "lib"

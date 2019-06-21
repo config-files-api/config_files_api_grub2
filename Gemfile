@@ -1,7 +1,8 @@
+# frozen_string_literal: true
+
 source "https://rubygems.org"
 
-# 0.5.X contain new minimal changes, that needs modification
-gem "cfa", "~> 0.5"
+gem "cfa", "~> 1.0"
 
 group :development, :test do
   gem "coveralls"
@@ -9,5 +10,6 @@ group :development, :test do
 end
 
 group :development do
+  gem "rake"
   gem "rubocop"
 end

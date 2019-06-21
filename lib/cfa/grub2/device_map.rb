@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "cfa/base_model"
 require "cfa/augeas_parser"
 require "cfa/placer"
@@ -16,14 +18,14 @@ module CFA
     #   Limitation is caused by BIOS Int 13 used by grub2 for selecting boot
     #   device.
     class DeviceMap < BaseModel
-      PATH = "/boot/grub2/device.map".freeze
+      PATH = "/boot/grub2/device.map"
 
       def initialize(file_handler: nil)
         super(AugeasParser.new("device_map.lns"), PATH,
           file_handler: file_handler)
       end
 
-      def save(changes_only: false)
+      def save
         raise "Too many grub devices. Limit is 8." if grub_devices.size > 8
 
         super
