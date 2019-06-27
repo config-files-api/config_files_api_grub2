@@ -28,15 +28,7 @@
 # wrong constant name <RESERVED_114>
 # wrong constant name <RESERVED_115>
 # wrong constant name <RESERVED_116>
-# wrong constant name <RESERVED_117>
-# wrong constant name <RESERVED_118>
-# wrong constant name <RESERVED_119>
 # wrong constant name <RESERVED_11>
-# wrong constant name <RESERVED_120>
-# wrong constant name <RESERVED_121>
-# wrong constant name <RESERVED_122>
-# wrong constant name <RESERVED_123>
-# wrong constant name <RESERVED_124>
 # wrong constant name <RESERVED_12>
 # wrong constant name <RESERVED_13>
 # wrong constant name <RESERVED_14>
@@ -679,134 +671,41 @@
 # wrong constant name empty?
 # wrong constant name for
 # wrong constant name for_many
-# wrong constant name initialize
-# wrong constant name new_element
-# wrong constant name <static-init>
-# wrong constant name new_element
-# wrong constant name <static-init>
-# wrong constant name []
-# wrong constant name add
-# wrong constant name all?
-# wrong constant name any?
-# wrong constant name delete
-# wrong constant name each
-# wrong constant name empty?
-# wrong constant name initialize
-# wrong constant name map
-# wrong constant name none?
-# wrong constant name <static-init>
-# uninitialized constant CFA::AugeasElement::Elem
-# uninitialized constant CFA::AugeasElement::K
-# uninitialized constant CFA::AugeasElement::V
-# wrong constant name <static-init>
-# wrong constant name <static-init>
-# wrong constant name aug_message
-# wrong constant name details
-# wrong constant name initialize
-# wrong constant name <static-init>
-# wrong constant name initialize
-# wrong constant name keys_for_prefix
-# wrong constant name <static-init>
-# wrong constant name empty
-# wrong constant name file_name
-# wrong constant name file_name=
-# wrong constant name initialize
-# wrong constant name parse
-# wrong constant name serialize
-# wrong constant name <static-init>
-# wrong constant name aug_message
-# wrong constant name character
-# wrong constant name file
-# wrong constant name file_content
-# wrong constant name initialize
-# wrong constant name lens
-# wrong constant name line
-# wrong constant name <static-init>
-# wrong constant name <static-init>
-# wrong constant name read
-# wrong constant name aug_message
-# wrong constant name aug_tree
-# wrong constant name file
-# wrong constant name initialize
-# wrong constant name lens
-# wrong constant name <static-init>
-# wrong constant name ==
-# wrong constant name []
-# wrong constant name []=
-# wrong constant name add
-# wrong constant name all_data
-# wrong constant name collection
-# wrong constant name data
-# wrong constant name delete
-# wrong constant name eql?
-# wrong constant name select
-# wrong constant name unique_id
-# wrong constant name <static-init>
-# wrong constant name ==
-# wrong constant name []
-# wrong constant name eql?
-# wrong constant name initialize
-# wrong constant name modified?
-# wrong constant name tree
-# wrong constant name tree=
-# wrong constant name value
-# wrong constant name value=
-# wrong constant name <static-init>
-# wrong constant name add_new
-# wrong constant name data
-# wrong constant name data=
-# wrong constant name generic_get
-# wrong constant name generic_set
-# wrong constant name initialize
-# wrong constant name load
-# wrong constant name loaded?
-# wrong constant name modify
-# wrong constant name save
-# wrong constant name tree_value_change
-# wrong constant name tree_value_plain
-# wrong constant name uncomment
-# wrong constant name <static-init>
-# wrong constant name attributes
-# wrong constant name default_file_handler
-# wrong constant name default_file_handler=
-# wrong constant name initialize
-# wrong constant name new_element
-# wrong constant name <static-init>
-# wrong constant name defined?
-# wrong constant name disable
-# wrong constant name disabled?
-# wrong constant name enable
-# wrong constant name enabled?
-# wrong constant name initialize
-# wrong constant name value=
-# wrong constant name <static-init>
-# wrong constant name default
-# wrong constant name default=
-# wrong constant name distributor
-# wrong constant name distributor=
-# wrong constant name gfxmode
-# wrong constant name gfxmode=
-# wrong constant name hidden_timeout
-# wrong constant name hidden_timeout=
-# wrong constant name theme
-# wrong constant name theme=
-# wrong constant name timeout
-# wrong constant name timeout=
-# wrong constant name initialize
-# wrong constant name to_proc
-# wrong constant name <static-init>
-# wrong constant name content
-# wrong constant name content=
-# wrong constant name initialize
-# wrong constant name read
-# wrong constant name write
-# wrong constant name <static-init>
-# wrong constant name create_element
-# wrong constant name new_element
-# wrong constant name <static-init>
-# wrong constant name initialize
-# wrong constant name new_element
-# wrong constant name <static-init>
+# uninitialized constant CFA::AfterPlacer
+# uninitialized constant CFA::AfterPlacer
+# uninitialized constant CFA::AppendPlacer
+# uninitialized constant CFA::AppendPlacer
+# uninitialized constant CFA::AugeasCollection
+# uninitialized constant CFA::AugeasCollection
+# uninitialized constant CFA::AugeasError
+# Did you mean?  RangeError
+# uninitialized constant CFA::AugeasError
+# Did you mean?  RangeError
+# uninitialized constant CFA::AugeasInternalError
+# uninitialized constant CFA::AugeasInternalError
+# uninitialized constant CFA::AugeasParser
+# uninitialized constant CFA::AugeasParser
+# uninitialized constant CFA::AugeasParsingError
+# uninitialized constant CFA::AugeasParsingError
+# uninitialized constant CFA::AugeasSerializingError
+# uninitialized constant CFA::AugeasSerializingError
+# uninitialized constant CFA::AugeasTree
+# uninitialized constant CFA::AugeasTree
+# uninitialized constant CFA::AugeasTreeValue
+# uninitialized constant CFA::AugeasTreeValue
+# uninitialized constant CFA::BaseModel
+# uninitialized constant CFA::BaseModel
+# wrong constant name <Class:BaseModel>
+# uninitialized constant CFA::BeforePlacer
+# uninitialized constant CFA::BeforePlacer
+# uninitialized constant CFA::BooleanValue
+# uninitialized constant CFA::BooleanValue
+# uninitialized constant CFA::MemoryFile
+# uninitialized constant CFA::MemoryFile
+# uninitialized constant CFA::Placer
+# uninitialized constant CFA::Placer
+# uninitialized constant CFA::ReplacePlacer
+# uninitialized constant CFA::ReplacePlacer
 # wrong constant name a
 # wrong constant name base
 # wrong constant name blockquote
@@ -993,7 +892,6 @@
 # wrong constant name detect$2
 # wrong constant name each_entry
 # wrong constant name each_with_index$2
-# wrong constant name each_with_object
 # wrong constant name entries$1
 # wrong constant name find$2
 # wrong constant name find_index$2
@@ -1024,8 +922,6 @@
 # wrong constant name chunk_while
 # wrong constant name force
 # wrong constant name slice_when
-# wrong constant name <<
-# wrong constant name yield
 # wrong constant name EWOULDBLOCK$1
 # wrong constant name EWOULDBLOCK$1
 # wrong constant name gid
@@ -3393,7 +3289,6 @@
 #                singleton_method
 # undefined method `to_enum$2' for module `Kernel'
 # Did you mean?  to_enum
-# wrong constant name class
 # wrong constant name clone$1
 # wrong constant name define_singleton_method$2
 # wrong constant name display$1
@@ -4434,12 +4329,6 @@
 # wrong constant name remove_type
 # wrong constant name safe_load
 # wrong constant name to_json
-# uninitialized constant RSpec::Core::ExampleGroup::BE_PREDICATE_REGEX
-# Did you mean?  RSpec::Core::ExampleGroup::BE_PREDICATE_REGEX
-# uninitialized constant RSpec::Core::ExampleGroup::DYNAMIC_MATCHER_REGEX
-# Did you mean?  RSpec::Core::ExampleGroup::DYNAMIC_MATCHER_REGEX
-# uninitialized constant RSpec::Core::ExampleGroup::HAS_REGEX
-# Did you mean?  RSpec::Core::ExampleGroup::HAS_REGEX
 # uninitialized constant RSpec::Core::ExampleGroup::NOT_YET_IMPLEMENTED
 # Did you mean?  RSpec::Core::ExampleGroup::NOT_YET_IMPLEMENTED
 # uninitialized constant RSpec::Core::ExampleGroup::NO_REASON_GIVEN
@@ -4541,549 +4430,6 @@
 # wrong constant name members
 # wrong constant name <static-init>
 # wrong constant name record
-# wrong constant name <Class:AmbiguousTargetError>
-# wrong constant name <Class:BlockLocator>
-# wrong constant name <Class:BlockTokenExtractor>
-# wrong constant name <Class:Error>
-# wrong constant name <Class:TargetNotFoundError>
-# wrong constant name body_content_lines
-# wrong constant name initialize
-# wrong constant name method_name
-# wrong constant name <static-init>
-# uninitialized constant RSpec::Expectations::BlockSnippetExtractor::BlockLocator::Elem
-# wrong constant name beginning_line_number
-# wrong constant name beginning_line_number=
-# wrong constant name body_content_locations
-# wrong constant name method_call_location
-# wrong constant name method_name
-# wrong constant name method_name=
-# wrong constant name source
-# wrong constant name source=
-# wrong constant name <static-init>
-# wrong constant name []
-# wrong constant name members
-# uninitialized constant RSpec::Expectations::BlockSnippetExtractor::BlockTokenExtractor::Elem
-# wrong constant name beginning_line_number
-# wrong constant name beginning_line_number=
-# wrong constant name body_tokens
-# wrong constant name method_name
-# wrong constant name method_name=
-# wrong constant name source
-# wrong constant name source=
-# wrong constant name state
-# wrong constant name <static-init>
-# wrong constant name []
-# wrong constant name members
-# wrong constant name <static-init>
-# wrong constant name <static-init>
-# wrong constant name <static-init>
-# wrong constant name try_extracting_single_line_body_of
-# wrong constant name aggregate
-# wrong constant name block_label
-# wrong constant name call
-# wrong constant name failures
-# wrong constant name initialize
-# wrong constant name metadata
-# wrong constant name other_errors
-# wrong constant name <static-init>
-# wrong constant name aggregation_block_label
-# wrong constant name aggregation_metadata
-# wrong constant name all_exceptions
-# wrong constant name exception_count_description
-# wrong constant name failures
-# wrong constant name initialize
-# wrong constant name other_errors
-# wrong constant name summary
-# uninitialized constant RSpec::Matchers::BuiltIn::All::UNDEFINED
-# Did you mean?  RSpec::Matchers::BuiltIn::All::UNDEFINED
-# wrong constant name does_not_match?
-# wrong constant name failed_objects
-# wrong constant name initialize
-# wrong constant name matcher
-# wrong constant name <static-init>
-# wrong constant name <
-# wrong constant name <=
-# wrong constant name ==
-# wrong constant name ===
-# wrong constant name =~
-# wrong constant name >
-# wrong constant name >=
-# uninitialized constant RSpec::Matchers::BuiltIn::Be::UNDEFINED
-# Did you mean?  RSpec::Matchers::BuiltIn::Be::UNDEFINED
-# wrong constant name initialize
-# wrong constant name <static-init>
-# uninitialized constant RSpec::Matchers::BuiltIn::BeAKindOf::UNDEFINED
-# Did you mean?  RSpec::Matchers::BuiltIn::BeAKindOf::UNDEFINED
-# wrong constant name <static-init>
-# uninitialized constant RSpec::Matchers::BuiltIn::BeAnInstanceOf::UNDEFINED
-# Did you mean?  RSpec::Matchers::BuiltIn::BeAnInstanceOf::UNDEFINED
-# wrong constant name <static-init>
-# uninitialized constant RSpec::Matchers::BuiltIn::BeBetween::UNDEFINED
-# Did you mean?  RSpec::Matchers::BuiltIn::BeBetween::UNDEFINED
-# wrong constant name exclusive
-# wrong constant name inclusive
-# wrong constant name initialize
-# wrong constant name <static-init>
-# uninitialized constant RSpec::Matchers::BuiltIn::BeComparedTo::UNDEFINED
-# Did you mean?  RSpec::Matchers::BuiltIn::BeComparedTo::UNDEFINED
-# wrong constant name initialize
-# wrong constant name <static-init>
-# uninitialized constant RSpec::Matchers::BuiltIn::BeFalsey::UNDEFINED
-# Did you mean?  RSpec::Matchers::BuiltIn::BeFalsey::UNDEFINED
-# wrong constant name <static-init>
-# wrong constant name <static-init>
-# uninitialized constant RSpec::Matchers::BuiltIn::BeNil::UNDEFINED
-# Did you mean?  RSpec::Matchers::BuiltIn::BeNil::UNDEFINED
-# wrong constant name <static-init>
-# uninitialized constant RSpec::Matchers::BuiltIn::BePredicate::UNDEFINED
-# Did you mean?  RSpec::Matchers::BuiltIn::BePredicate::UNDEFINED
-# wrong constant name does_not_match?
-# wrong constant name initialize
-# wrong constant name matches?
-# wrong constant name <static-init>
-# uninitialized constant RSpec::Matchers::BuiltIn::BeTruthy::UNDEFINED
-# Did you mean?  RSpec::Matchers::BuiltIn::BeTruthy::UNDEFINED
-# wrong constant name <static-init>
-# uninitialized constant RSpec::Matchers::BuiltIn::BeWithin::UNDEFINED
-# Did you mean?  RSpec::Matchers::BuiltIn::BeWithin::UNDEFINED
-# wrong constant name initialize
-# wrong constant name of
-# wrong constant name percent_of
-# wrong constant name <static-init>
-# uninitialized constant RSpec::Matchers::BuiltIn::Change::UNDEFINED
-# Did you mean?  RSpec::Matchers::BuiltIn::Change::UNDEFINED
-# wrong constant name by
-# wrong constant name by_at_least
-# wrong constant name by_at_most
-# wrong constant name does_not_match?
-# wrong constant name from
-# wrong constant name initialize
-# wrong constant name matches?
-# wrong constant name to
-# wrong constant name <static-init>
-# wrong constant name <Class:And>
-# wrong constant name <Class:NestedEvaluator>
-# wrong constant name <Class:Or>
-# wrong constant name <Class:SequentialEvaluator>
-# uninitialized constant RSpec::Matchers::BuiltIn::Compound::UNDEFINED
-# Did you mean?  RSpec::Matchers::BuiltIn::Compound::UNDEFINED
-# wrong constant name diffable_matcher_list
-# wrong constant name does_not_match?
-# wrong constant name evaluator
-# wrong constant name initialize
-# wrong constant name matcher_1
-# wrong constant name matcher_2
-# uninitialized constant RSpec::Matchers::BuiltIn::Compound::And::UNDEFINED
-# Did you mean?  RSpec::Matchers::BuiltIn::Compound::And::UNDEFINED
-#                RSpec::Matchers::BuiltIn::Compound::UNDEFINED
-# wrong constant name <static-init>
-# wrong constant name initialize
-# wrong constant name matcher_matches?
-# wrong constant name <static-init>
-# wrong constant name matcher_expects_call_stack_jump?
-# uninitialized constant RSpec::Matchers::BuiltIn::Compound::Or::UNDEFINED
-# Did you mean?  RSpec::Matchers::BuiltIn::Compound::Or::UNDEFINED
-#                RSpec::Matchers::BuiltIn::Compound::UNDEFINED
-# wrong constant name <static-init>
-# wrong constant name initialize
-# wrong constant name matcher_matches?
-# wrong constant name <static-init>
-# wrong constant name <static-init>
-# wrong constant name <Class:PairingsMaximizer>
-# uninitialized constant RSpec::Matchers::BuiltIn::ContainExactly::UNDEFINED
-# Did you mean?  RSpec::Matchers::BuiltIn::ContainExactly::UNDEFINED
-# wrong constant name <Class:NullSolution>
-# wrong constant name <Class:Solution>
-# wrong constant name actual_to_expected_matched_indexes
-# wrong constant name expected_to_actual_matched_indexes
-# wrong constant name find_best_solution
-# wrong constant name initialize
-# wrong constant name solution
-# wrong constant name <static-init>
-# wrong constant name worse_than?
-# wrong constant name +
-# uninitialized constant #<Class:0x0000000004b647a8>::Elem
-# wrong constant name candidate?
-# wrong constant name ideal?
-# wrong constant name indeterminate_actual_indexes
-# wrong constant name indeterminate_actual_indexes=
-# wrong constant name indeterminate_expected_indexes
-# wrong constant name indeterminate_expected_indexes=
-# wrong constant name unmatched_actual_indexes
-# wrong constant name unmatched_actual_indexes=
-# wrong constant name unmatched_expected_indexes
-# wrong constant name unmatched_expected_indexes=
-# wrong constant name unmatched_item_count
-# wrong constant name worse_than?
-# wrong constant name <static-init>
-# wrong constant name []
-# wrong constant name members
-# wrong constant name <static-init>
-# wrong constant name <static-init>
-# uninitialized constant RSpec::Matchers::BuiltIn::Cover::UNDEFINED
-# Did you mean?  RSpec::Matchers::BuiltIn::Cover::UNDEFINED
-# wrong constant name does_not_match?
-# wrong constant name initialize
-# wrong constant name matches?
-# wrong constant name <static-init>
-# uninitialized constant RSpec::Matchers::BuiltIn::EndWith::UNDEFINED
-# Did you mean?  RSpec::Matchers::BuiltIn::EndWith::UNDEFINED
-# wrong constant name <static-init>
-# uninitialized constant RSpec::Matchers::BuiltIn::Eq::UNDEFINED
-# Did you mean?  RSpec::Matchers::BuiltIn::Eq::UNDEFINED
-# wrong constant name <static-init>
-# uninitialized constant RSpec::Matchers::BuiltIn::Eql::UNDEFINED
-# Did you mean?  RSpec::Matchers::BuiltIn::Eql::UNDEFINED
-# wrong constant name <static-init>
-# uninitialized constant RSpec::Matchers::BuiltIn::Equal::UNDEFINED
-# Did you mean?  RSpec::Matchers::BuiltIn::Equal::UNDEFINED
-# wrong constant name <static-init>
-# wrong constant name <Class:ExistenceTest>
-# uninitialized constant RSpec::Matchers::BuiltIn::Exist::UNDEFINED
-# Did you mean?  RSpec::Matchers::BuiltIn::Exist::UNDEFINED
-# wrong constant name does_not_match?
-# wrong constant name initialize
-# wrong constant name actual_exists?
-# wrong constant name valid_test?
-# wrong constant name validity_message
-# wrong constant name <static-init>
-# wrong constant name <static-init>
-# uninitialized constant RSpec::Matchers::BuiltIn::Has::UNDEFINED
-# Did you mean?  RSpec::Matchers::BuiltIn::Has::UNDEFINED
-# wrong constant name does_not_match?
-# wrong constant name initialize
-# wrong constant name matches?
-# wrong constant name <static-init>
-# uninitialized constant RSpec::Matchers::BuiltIn::HaveAttributes::UNDEFINED
-# Did you mean?  RSpec::Matchers::BuiltIn::HaveAttributes::UNDEFINED
-# wrong constant name does_not_match?
-# wrong constant name initialize
-# wrong constant name respond_to_failed
-# wrong constant name <static-init>
-# uninitialized constant RSpec::Matchers::BuiltIn::Include::UNDEFINED
-# Did you mean?  RSpec::Matchers::BuiltIn::Include::UNDEFINED
-# wrong constant name does_not_match?
-# wrong constant name expecteds
-# wrong constant name initialize
-# wrong constant name <static-init>
-# uninitialized constant RSpec::Matchers::BuiltIn::Match::UNDEFINED
-# Did you mean?  RSpec::Matchers::BuiltIn::Match::UNDEFINED
-# wrong constant name initialize
-# wrong constant name with_captures
-# wrong constant name <static-init>
-# wrong constant name __delegate_operator
-# wrong constant name <static-init>
-# wrong constant name !=
-# wrong constant name !~
-# wrong constant name <
-# wrong constant name <=
-# wrong constant name ==
-# wrong constant name ===
-# wrong constant name =~
-# wrong constant name >
-# wrong constant name >=
-# wrong constant name description
-# wrong constant name fail_with_message
-# wrong constant name initialize
-# wrong constant name <static-init>
-# wrong constant name get
-# wrong constant name register
-# wrong constant name registry
-# wrong constant name unregister
-# wrong constant name use_custom_matcher_or_delegate
-# uninitialized constant RSpec::Matchers::BuiltIn::Output::UNDEFINED
-# Did you mean?  RSpec::Matchers::BuiltIn::Output::UNDEFINED
-# wrong constant name does_not_match?
-# wrong constant name initialize
-# wrong constant name matches?
-# wrong constant name to_stderr
-# wrong constant name to_stderr_from_any_process
-# wrong constant name to_stdout
-# wrong constant name to_stdout_from_any_process
-# wrong constant name <static-init>
-# wrong constant name __delegate_operator
-# wrong constant name <static-init>
-# wrong constant name description
-# wrong constant name does_not_match?
-# wrong constant name expects_call_stack_jump?
-# wrong constant name failure_message
-# wrong constant name failure_message_when_negated
-# wrong constant name initialize
-# wrong constant name matches?
-# wrong constant name supports_block_expectations?
-# wrong constant name with_message
-# wrong constant name <static-init>
-# uninitialized constant RSpec::Matchers::BuiltIn::RespondTo::UNDEFINED
-# Did you mean?  RSpec::Matchers::BuiltIn::RespondTo::UNDEFINED
-# wrong constant name and_any_keywords
-# wrong constant name and_keywords
-# wrong constant name and_unlimited_arguments
-# wrong constant name argument
-# wrong constant name arguments
-# wrong constant name does_not_match?
-# wrong constant name initialize
-# wrong constant name with
-# wrong constant name with_any_keywords
-# wrong constant name with_keywords
-# wrong constant name with_unlimited_arguments
-# wrong constant name <static-init>
-# uninitialized constant RSpec::Matchers::BuiltIn::Satisfy::UNDEFINED
-# Did you mean?  RSpec::Matchers::BuiltIn::Satisfy::UNDEFINED
-# wrong constant name initialize
-# wrong constant name matches?
-# wrong constant name <static-init>
-# uninitialized constant RSpec::Matchers::BuiltIn::StartOrEndWith::UNDEFINED
-# Did you mean?  RSpec::Matchers::BuiltIn::StartOrEndWith::UNDEFINED
-# wrong constant name initialize
-# wrong constant name <static-init>
-# uninitialized constant RSpec::Matchers::BuiltIn::StartWith::UNDEFINED
-# Did you mean?  RSpec::Matchers::BuiltIn::StartWith::UNDEFINED
-# wrong constant name <static-init>
-# wrong constant name description
-# wrong constant name does_not_match?
-# wrong constant name expects_call_stack_jump?
-# wrong constant name failure_message
-# wrong constant name failure_message_when_negated
-# wrong constant name initialize
-# wrong constant name matches?
-# wrong constant name supports_block_expectations?
-# wrong constant name <static-init>
-# uninitialized constant RSpec::Matchers::BuiltIn::YieldControl::UNDEFINED
-# Did you mean?  RSpec::Matchers::BuiltIn::YieldControl::UNDEFINED
-# wrong constant name at_least
-# wrong constant name at_most
-# wrong constant name does_not_match?
-# wrong constant name exactly
-# wrong constant name initialize
-# wrong constant name matches?
-# wrong constant name once
-# wrong constant name thrice
-# wrong constant name times
-# wrong constant name twice
-# wrong constant name <static-init>
-# uninitialized constant RSpec::Matchers::BuiltIn::YieldSuccessiveArgs::UNDEFINED
-# Did you mean?  RSpec::Matchers::BuiltIn::YieldSuccessiveArgs::UNDEFINED
-# wrong constant name does_not_match?
-# wrong constant name initialize
-# wrong constant name matches?
-# wrong constant name <static-init>
-# uninitialized constant RSpec::Matchers::BuiltIn::YieldWithArgs::UNDEFINED
-# Did you mean?  RSpec::Matchers::BuiltIn::YieldWithArgs::UNDEFINED
-# wrong constant name does_not_match?
-# wrong constant name initialize
-# wrong constant name matches?
-# wrong constant name <static-init>
-# uninitialized constant RSpec::Matchers::BuiltIn::YieldWithNoArgs::UNDEFINED
-# Did you mean?  RSpec::Matchers::BuiltIn::YieldWithNoArgs::UNDEFINED
-# wrong constant name does_not_match?
-# wrong constant name matches?
-# wrong constant name <static-init>
-# wrong constant name <Class:AnyInstance>
-# wrong constant name <Class:ExpectChain>
-# wrong constant name <Class:MarshalExtension>
-# wrong constant name <Class:MessageChain>
-# wrong constant name <Class:StubChain>
-# wrong constant name <Class:Chain>
-# wrong constant name <Class:ErrorGenerator>
-# wrong constant name <Class:ExpectChainChain>
-# wrong constant name <Class:ExpectationChain>
-# wrong constant name <Class:FluentInterfaceProxy>
-# wrong constant name <Class:MessageChains>
-# wrong constant name <Class:PositiveExpectationChain>
-# wrong constant name <Class:Proxy>
-# wrong constant name <Class:Recorder>
-# wrong constant name <Class:StubChain>
-# wrong constant name <Class:StubChainChain>
-# wrong constant name <Class:Customizations>
-# wrong constant name constrained_to_any_of?
-# wrong constant name expectation_fulfilled!
-# wrong constant name initialize
-# wrong constant name matches_args?
-# wrong constant name never
-# wrong constant name playback!
-# wrong constant name and_call_original
-# wrong constant name and_raise
-# wrong constant name and_return
-# wrong constant name and_throw
-# wrong constant name and_wrap_original
-# wrong constant name and_yield
-# wrong constant name at_least
-# wrong constant name at_most
-# wrong constant name exactly
-# wrong constant name never
-# wrong constant name once
-# wrong constant name thrice
-# wrong constant name times
-# wrong constant name twice
-# wrong constant name with
-# wrong constant name <static-init>
-# wrong constant name record
-# wrong constant name <static-init>
-# wrong constant name raise_does_not_implement_error
-# wrong constant name raise_message_already_received_by_other_instance_error
-# wrong constant name raise_not_supported_with_prepend_error
-# wrong constant name raise_second_instance_received_message_error
-# wrong constant name <static-init>
-# uninitialized constant RSpec::Mocks::AnyInstance::ExpectChainChain::EmptyInvocationOrder
-# Did you mean?  RSpec::Mocks::AnyInstance::ExpectChainChain::EmptyInvocationOrder
-#                RSpec::Mocks::AnyInstance::ExpectChainChain::InvocationOrder
-# uninitialized constant RSpec::Mocks::AnyInstance::ExpectChainChain::InvocationOrder
-# Did you mean?  RSpec::Mocks::AnyInstance::ExpectChainChain::InvocationOrder
-# wrong constant name initialize
-# wrong constant name <static-init>
-# wrong constant name expectation_fulfilled?
-# wrong constant name initialize
-# wrong constant name <static-init>
-# wrong constant name initialize
-# wrong constant name method_missing
-# wrong constant name <static-init>
-# wrong constant name []
-# wrong constant name add
-# wrong constant name all_expectations_fulfilled?
-# wrong constant name each_unfulfilled_expectation_matching
-# wrong constant name has_expectation?
-# wrong constant name playback!
-# wrong constant name received_expected_message!
-# wrong constant name remove_stub_chains_for!
-# wrong constant name unfulfilled_expectations
-# wrong constant name <static-init>
-# wrong constant name <static-init>
-# wrong constant name expect_chain
-# wrong constant name initialize
-# wrong constant name klass
-# wrong constant name should_not_receive
-# wrong constant name should_receive
-# wrong constant name stub
-# wrong constant name stub_chain
-# wrong constant name unstub
-# wrong constant name <static-init>
-# wrong constant name already_observing?
-# wrong constant name build_alias_method_name
-# wrong constant name expect_chain
-# wrong constant name initialize
-# wrong constant name instance_that_received
-# wrong constant name klass
-# wrong constant name message_chains
-# wrong constant name notify_received_message
-# wrong constant name playback!
-# wrong constant name should_not_receive
-# wrong constant name should_receive
-# wrong constant name stop_all_observation!
-# wrong constant name stop_observing!
-# wrong constant name stub
-# wrong constant name stub_chain
-# wrong constant name stubs
-# wrong constant name unstub
-# wrong constant name verify
-# wrong constant name <static-init>
-# wrong constant name expectation_fulfilled?
-# wrong constant name <static-init>
-# uninitialized constant RSpec::Mocks::AnyInstance::StubChainChain::EmptyInvocationOrder
-# Did you mean?  RSpec::Mocks::AnyInstance::StubChainChain::EmptyInvocationOrder
-#                RSpec::Mocks::AnyInstance::StubChainChain::InvocationOrder
-# uninitialized constant RSpec::Mocks::AnyInstance::StubChainChain::InvocationOrder
-# Did you mean?  RSpec::Mocks::AnyInstance::StubChainChain::InvocationOrder
-# wrong constant name initialize
-# wrong constant name <static-init>
-# wrong constant name <static-init>
-# wrong constant name error_generator
-# wrong constant name <static-init>
-# wrong constant name expect_chain_on
-# wrong constant name <static-init>
-# wrong constant name patch!
-# wrong constant name unpatch!
-# wrong constant name at_least
-# wrong constant name at_most
-# wrong constant name description
-# wrong constant name does_not_match?
-# wrong constant name exactly
-# wrong constant name failure_message
-# wrong constant name failure_message_when_negated
-# wrong constant name initialize
-# wrong constant name matches?
-# wrong constant name name
-# wrong constant name once
-# wrong constant name ordered
-# wrong constant name setup_allowance
-# wrong constant name setup_any_instance_allowance
-# wrong constant name setup_any_instance_expectation
-# wrong constant name setup_any_instance_negative_expectation
-# wrong constant name setup_expectation
-# wrong constant name setup_negative_expectation
-# wrong constant name thrice
-# wrong constant name times
-# wrong constant name twice
-# wrong constant name with
-# wrong constant name <static-init>
-# wrong constant name <Class:DefaultDescribable>
-# wrong constant name and_call_original
-# wrong constant name and_raise
-# wrong constant name and_return
-# wrong constant name and_throw
-# wrong constant name and_wrap_original
-# wrong constant name and_yield
-# wrong constant name at_least
-# wrong constant name at_most
-# wrong constant name description
-# wrong constant name does_not_match?
-# wrong constant name exactly
-# wrong constant name initialize
-# wrong constant name matches?
-# wrong constant name name
-# wrong constant name never
-# wrong constant name once
-# wrong constant name ordered
-# wrong constant name setup_allowance
-# wrong constant name setup_any_instance_allowance
-# wrong constant name setup_any_instance_expectation
-# wrong constant name setup_any_instance_negative_expectation
-# wrong constant name setup_expectation
-# wrong constant name setup_negative_expectation
-# wrong constant name thrice
-# wrong constant name times
-# wrong constant name twice
-# wrong constant name with
-# wrong constant name description_for
-# wrong constant name initialize
-# wrong constant name <static-init>
-# wrong constant name <static-init>
-# wrong constant name and_call_original
-# wrong constant name and_raise
-# wrong constant name and_return
-# wrong constant name and_throw
-# wrong constant name and_yield
-# wrong constant name description
-# wrong constant name does_not_match?
-# wrong constant name initialize
-# wrong constant name matches?
-# wrong constant name name
-# wrong constant name setup_allowance
-# wrong constant name setup_any_instance_allowance
-# wrong constant name setup_any_instance_expectation
-# wrong constant name setup_expectation
-# wrong constant name setup_negative_expectation
-# wrong constant name with
-# wrong constant name <static-init>
-# wrong constant name description
-# wrong constant name does_not_match?
-# wrong constant name initialize
-# wrong constant name matches?
-# wrong constant name name
-# wrong constant name setup_allowance
-# wrong constant name setup_any_instance_allowance
-# wrong constant name setup_any_instance_expectation
-# wrong constant name setup_expectation
-# wrong constant name setup_negative_expectation
-# wrong constant name warn_about_block
-# wrong constant name <static-init>
-# wrong constant name block
-# wrong constant name chain
-# wrong constant name initialize
-# wrong constant name object
-# wrong constant name setup_chain
-# wrong constant name <static-init>
-# wrong constant name <static-init>
-# wrong constant name stub_chain_on
 # wrong constant name <Class:Differ>
 # wrong constant name color?
 # wrong constant name diff
@@ -5091,6 +4437,11 @@
 # wrong constant name diff_as_string
 # wrong constant name initialize
 # wrong constant name <static-init>
+# wrong constant name deregister_matcher_definition
+# wrong constant name is_a_matcher?
+# wrong constant name matcher_definitions
+# wrong constant name register_matcher_definition
+# wrong constant name rspec_description_for_object
 # wrong constant name <Class:CparseParams>
 # wrong constant name <static-init>
 # uninitialized constant Rake::DSL::DEFAULT

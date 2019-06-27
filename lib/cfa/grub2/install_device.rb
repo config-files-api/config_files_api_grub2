@@ -10,6 +10,8 @@ module CFA
     # for better readability special values generic_mbr and activate is at
     # the end of file
     module InstallDeviceParser
+      extend T::Sig
+
       sig { params(string: String).returns(T::Array[String]) }
       # returns list of non-empty lines
       def self.parse(string)
