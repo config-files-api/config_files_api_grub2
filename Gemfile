@@ -9,6 +9,6 @@ group :development, :test do
 end
 
 group :development do
-  gem "rubocop"
+  gem "rubocop", "0.41.2"
   gem "rake"
 end

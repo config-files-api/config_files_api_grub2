@@ -187,7 +187,8 @@ describe CFA::Grub2::Default do
         config.generic_set("GRUB_ENABLE_CRYPTODISK", "true")
         config.save
 
-        expect(memory_file.content.strip).to eq("GRUB_ENABLE_CRYPTODISK=\"true\"")
+        expect(memory_file.content.strip)
+          .to eq("GRUB_ENABLE_CRYPTODISK=\"true\"")
       end
     end
   end
