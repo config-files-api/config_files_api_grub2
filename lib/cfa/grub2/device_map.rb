@@ -23,7 +23,7 @@ module CFA
           file_handler: file_handler)
       end
 
-      def save(changes_only: false)
+      def save
         raise "Too many grub devices. Limit is 8." if grub_devices.size > 8
 
         super
