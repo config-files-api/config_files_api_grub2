@@ -170,6 +170,21 @@ describe CFA::Grub2::Default do
     end
   end
 
+  describe "#savedefault" do
+    let(:file_content) { "GRUB_SAVEDEFAULT=false\n" }
+
+    it "returns object representing boolean state" do
+      expect(config.savedefault).to be_a(boolean_value_class)
+      # few simple test to verify params
+      expect(config.savedefault.enabled?).to eq(false)
+
+      # and store test
+      config.savedefault.enable
+      config.save
+      expect(memory_file.content).to eq("GRUB_SAVEDEFAULT=true\n")
+    end
+  end
+
   describe "#kernel_params" do
     let(:file_content) do
       "GRUB_CMDLINE_LINUX_DEFAULT=\"quite console=S0 console=S1 vga=0x400\" " \
