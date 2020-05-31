@@ -27,7 +27,7 @@ module CFA
 
         def self.serialize(_string)
           raise NotImplementedError,
-                "Serializing not implemented, use grub2 generator"
+            "Serializing not implemented, use grub2 generator"
         end
 
         def self.empty
