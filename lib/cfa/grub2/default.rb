@@ -101,7 +101,7 @@ module CFA
 
       def cryptodisk
         @cryptodisk ||= BooleanValue.new("GRUB_ENABLE_CRYPTODISK", self,
-                                         true_value: "y", false_value: "n")
+          true_value: "y", false_value: "n")
       end
 
       VALID_TERMINAL_OPTIONS = [:serial, :console, :gfxterm].freeze
