@@ -1,11 +1,10 @@
-# Following
-# https://github.com/SUSE/style-guides/blob/master/Ruby.md
-
 Metrics/BlockLength:
   Exclude:
     - 'spec/**/*'
 
-# https://github.com/SUSE/style-guides/blob/master/Ruby.md#strings
+Metrics/ClassLength:
+  Max: 200
+
 Style/StringLiterals:
   EnforcedStyle: double_quotes
 
@@ -16,7 +15,6 @@ Style/StringLiteralsInInterpolation:
 Layout/MultilineOperationIndentation:
   EnforcedStyle: indented
 
-# https://github.com/SUSE/style-guides/blob/master/Ruby.md#arrays
 Style/WordArray:
   Enabled: false
 
