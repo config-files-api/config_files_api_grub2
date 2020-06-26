@@ -99,6 +99,13 @@ module CFA
         )
       end
 
+      def savedefault
+        @savedefault ||= BooleanValue.new(
+          "GRUB_SAVEDEFAULT", self,
+          true_value: "true", false_value: "false"
+        )
+      end
+
       def cryptodisk
         @cryptodisk ||= BooleanValue.new("GRUB_ENABLE_CRYPTODISK", self,
           true_value: "y", false_value: "n")
